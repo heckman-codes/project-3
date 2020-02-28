@@ -1,0 +1,10 @@
+.jumbotron {
+    background-image: url(./img/preview_image-700x350.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 700px;
+}
+
+footer {
+    text-align: center
+}
