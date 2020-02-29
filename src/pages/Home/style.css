@@ -4,8 +4,18 @@
     background-repeat: no-repeat;
     height: 750px;
     text-align: center;
+    font-family: "Arcade"
 }
-
+.lead {
+    font-family: "Arcade";
+    color: #333333;
+}
 footer {
     text-align: center
 }
+
+@font-face {
+    font-family: "Arcade";
+    src: url("../../fonts/RetroGaming.ttf")
+}
+
