@@ -4,8 +4,8 @@ function GameCol(props) {
     return (
         <div className="col s6 player-col" {...props}>
             <div className="event-image">
-                {/* <img src="https://project-3-arcade-game.s3-us-west-2.amazonaws.com/desert.png" alt="event-x" /> */}
-                <img src="https://project-3-arcade-game.s3-us-west-2.amazonaws.com/apocalypse1.webp" alt="event-x" />
+                <img src="https://project-3-arcade-game.s3-us-west-2.amazonaws.com/desert.png" alt="event-x" />
+                {/* <img src="https://project-3-arcade-game.s3-us-west-2.amazonaws.com/apocalypse1.webp" alt="event-x" /> */}
             </div>
             <div class="progress">
                 <div class="determinate" style={{ width: 70 + "%" }}></div>
