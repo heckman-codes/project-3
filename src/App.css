@@ -32,11 +32,12 @@ body {
 
 li.inv-item {
     cursor: pointer;
+    padding: none;
 }
 
 .inv-item:hover {
   transform: scale(1.4); 
-  border: 3px solid white;
+  /* border: 3px solid white; */
   cursor: pointer;
 }
 
@@ -49,6 +50,13 @@ li.inv-item {
 .logo-img {
   max-width: 200px;
   margin-top: 25px;
+}
+
+.inventory-col {
+  border: 1px solid goldenrod;
+  padding-top: 20px;
+  background-color: #282c34;
+  min-height: 337px !important;
 }
 
 p {
