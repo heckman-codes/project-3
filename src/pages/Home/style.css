@@ -2,16 +2,24 @@
     background-image: url(../../images/preview_image-700x350.png);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 750px;
+    height: 700px;
     text-align: center;
     font-family: "Arcade"
 }
-.lead {
+
+.lead, .btn {
     font-family: "Arcade";
     color: #333333;
 }
+
 footer {
-    text-align: center
+    position: fixed;
+}
+
+#footer {
+    font-family: "Arcade";
+    font-size: 1rem;
+    color: white;
 }
 
 @font-face {
