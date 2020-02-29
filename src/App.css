@@ -81,6 +81,10 @@ p {
   max-width: 1200px;
 }
 
+.row .game {
+  margin: 0 auto;
+}
+
 .row .col {
   padding: 0;
 }
