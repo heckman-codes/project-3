@@ -1,8 +1,43 @@
-import Modal from "../../components/Modal"
+import React, { useState, useEffect } from 'react';
+// import Test from "../../components/Modal"
 import "../Home/style.css"
-import React from 'react';
+import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
+
+const customStyles = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        padding: '8rem'
+    }
+};
 
 function Home() {
+
+    useEffect(() => {
+        Modal.setAppElement('body');
+    }, []
+    )
+
+    // var subtitle;
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+    function openModal() {
+        setIsOpen(true);
+    }
+
+    function afterOpenModal() {
+        // references are now sync'd and can be accessed.
+        // subtitle.style.color = '#f00';
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
+
     return (
         <div>
             <div className="jumbotron jumbotron-fluid">
@@ -10,7 +45,7 @@ function Home() {
                     <h1 className="display-4">Would you like to play a game?</h1>
                     <p className="lead">This is a gentle game full of unicorns and butterflies.</p>
                 </div>
-                <button type="button" className="btn btn-primary" id="enter-game-btn" data-toggle="modal"
+                <button onClick={openModal} type="button" className="btn btn-primary" id="enter-game-btn" data-toggle="modal"
                     data-target="#exampleModalCenter">
                     Enter Game?
             </button>
@@ -20,7 +55,13 @@ function Home() {
                     <h3 id="footer" className="white-text"> &copy; <span id="footerLogo">(Game Name)</span></h3>
                 </footer>
             </div>
-            <Modal />
+            <Modal
+                isOpen={modalIsOpen}
+                onAfterOpen={afterOpenModal}
+                onRequestClose={closeModal}
+                style={customStyles}
+                contentLabel="Example Modal"
+            />
         </div>
     );
 }
