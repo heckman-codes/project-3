@@ -52,7 +52,7 @@ function Home() {
             </div>
             <div className="footer footer-fluid">
                 <footer>
-                    <h3 id="footer" className="white-text"> &copy; <span id="footerLogo">(Game Name)</span></h3>
+                    <h3 id="footer" className="white-text"> &copy; <span id="footerLogo">The Long Way</span></h3>
                 </footer>
             </div>
             <Modal
