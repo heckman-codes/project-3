@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import "./pages/Home/style.css"
 import Navbar from './components/Navbar';
 import Game from './pages/Game';
 import Home from './pages/Home'
@@ -16,7 +17,7 @@ function App() {
       <div>
         <Navbar />
         <Switch>
-          <Route exact path="/home" component={Home} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/game" component={Game} />
           <Route component={Game} />
         </Switch>
