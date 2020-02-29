@@ -2,7 +2,7 @@ import React from 'react';
 
 function InventoryCol(props) {
     return (
-        <div className="col s3 player-col center-align inventory-col" {...props}>
+        <div className="col s3 center-align inventory-col" {...props}>
             <p>Inventory</p>
             <ul>
                 <li className="col s3 inv-item">

@@ -35,17 +35,24 @@ li.inv-item {
     padding: none;
 }
 
+.event-text {
+  padding: 0 20px;
+}
+
 .inv-item:hover {
   transform: scale(1.4); 
   /* border: 3px solid white; */
   cursor: pointer;
 }
 
-/* .event-image {
-  min-height: 337px;
-  border: 1px solid goldenrod;
-  border-bottom: none;
-} */
+.event-image {
+  max-width: 600px;
+  max-height: 336px !important;
+}
+
+.event-img-file {
+  width: 100%;
+}
 
 .logo-img {
   max-width: 200px;
@@ -54,9 +61,10 @@ li.inv-item {
 
 .inventory-col {
   border: 1px solid goldenrod;
+  border-left: none;
   padding-top: 20px;
   background-color: #282c34;
-  min-height: 337px !important;
+  max-height: 337px !important;
 }
 
 p {
@@ -89,31 +97,62 @@ p {
   padding: 0;
 }
 
+.game-col {
+  border: 1px solid goldenrod;
+}
+
 .player-col {
-  /* border: 1px solid white; */
+  border: 1px solid goldenrod;
+  border-right: none;
+  background-image: url("./images/pixel_brick.png");
+  background-size: contain;
+}
+
+.player-pic-container {
+  margin-top: 20px;
 }
 
 .player-pic {
   max-width: 200px;
   background-color: gold;
   border-radius: 100%;
-  border: 1px solid goldenrod;
+  /* border: 3px solid white; */
   margin: 0 auto !important;
+  /* box-shadow: 3px 3px 10px .9 black; */
 }
 
 .progress {
+  height: 15px;
+  border-radius: 0;
   margin: 0 !important;
   padding: 0 !important;
-  background-color: rgb(182, 143, 15);
-  /* border-radius: 0;
-  border: solid goldenrod;
-  border-left: 1px;
-  border-right: 1px; */
+  background-color: rgb(28, 59, 117);
+  /* border: solid goldenrod; */
+  border-top: 1px;
+  border-bottom: 1px;
 }
 
 .determinate {
-  background-color: rgb(255, 214, 80) !important;
+  background-color: rgb(48, 160, 224) !important;
   /* border-radius: 0; */
+}
+
+#player-name {
+  font-family: 'Pixel';
+  color:white;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+  font-size: 40px;
+}
+
+#player-job {
+  font-family: 'Arcade';
+  color:white;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
 }
 
 .game {
@@ -122,17 +161,17 @@ p {
 
 .text-window {
   background-image: url("./images/dark-bg-texture.png");
-  border: 1px solid goldenrod;
+  /* border: 1px solid goldenrod; */
   border-top: none;
-  padding-top: 20px;
+  padding: 20px 0;
 }
 
-.text-window, .event-image {
+/* .text-window, .event-image {
   min-width: 200px;
-  /* border: 1px solid white; */
+  border: 1px solid white;
   max-width: 602px;
   min-width: 602px;
-}
+} */
 
 @font-face {
   font-family: 'Pixel';
