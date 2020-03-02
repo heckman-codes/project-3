@@ -4,11 +4,11 @@ function GameCol(props) {
     return (
         <div className="col s6 game-col" {...props}>
             <div className="event-image">
-                {/* <img className="event-img-file" src="https://project-3-arcade-game.s3-us-west-2.amazonaws.com/desert.png" alt="event-x" /> */}
-                <img className="event-img-file" src="https://project-3-arcade-game.s3-us-west-2.amazonaws.com/apocalypse1.webp" alt="event-x" />
+                <img className="event-img-file" src="https://project-3-arcade-game.s3-us-west-2.amazonaws.com/breakingbad.gif" alt="event-x" />
+                {/* <img className="event-img-file" src="https://project-3-arcade-game.s3-us-west-2.amazonaws.com/apocalypse1.webp" alt="event-x" /> */}
             </div>
-            <div class="progress">
-                <div class="determinate" style={{ width: 70 + "%" }}></div>
+            <div className="progress">
+                <div className="determinate" style={{ width: 70 + "%" }}></div>
             </div>
             <div className="text-window">
                 <p className="event-text" style={{ color: "gold" }}>event - traveling</p>
