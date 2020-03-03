@@ -7,8 +7,8 @@ function PlayerCol(props) {
                 <img alt="Profile" className="player-pic" src="https://project-3-arcade-game.s3-us-west-2.amazonaws.com/character-test.png" />
             </div>
             <div className="row">
-                <h1 id="player-name" style={{ marginTop: "20px" }}>Adam</h1>
-                <h4 id="player-job" style={{ color: "goldenrod" }}>Veterinarian</h4>
+                <h1 id="player-name" style={{ marginTop: "20px" }}>Chad</h1>
+                <h4 id="player-job" style={{ color: "goldenrod" }}>Sandwich Artist</h4>
                 <div className="row" id="stat-container" style={{ margin: 0 + "auto" }}>
                     <div className="container">
                         <div className="col s6">
