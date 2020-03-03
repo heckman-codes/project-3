@@ -39,12 +39,14 @@ function Home() {
     }
 
     function login() {
-        setIsOpen(true)
-        // ("modal-body-main").hide()
+        setIsOpen(false)
+        // href = "/login"
+
     }
 
     function signUp() {
-        setIsOpen(true)
+        setIsOpen(false)
+        // href = "/signUp"
     }
 
     return (
