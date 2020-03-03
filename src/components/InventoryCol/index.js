@@ -2,6 +2,8 @@ import React from 'react';
 
 function InventoryCol(props) {
 
+    // const [toolTip, setTooltip] = useState();
+
     var toolytip = document.getElementsByClassName('.toolytip');
 
     document.addEventListener('mousemove', toolyTip, false);

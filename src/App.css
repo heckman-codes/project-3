@@ -8,7 +8,7 @@
 }
 
 .toolytip:hover .toolytipdata {
-  display: block;
+  display: inline-block;
 }
 
 
@@ -16,7 +16,8 @@
   display: none;
   background: black;
   color: white;
-  /* margin-left: 28px; */
+  margin-top: -8px;
+  margin-left: 10px;
   padding: 10px;
   position: absolute;
   z-index: 1000;
@@ -81,6 +82,16 @@ li.inv-item {
 .inventory-item:hover {
   transform: scale(1.2); 
   border: 3px solid white;
+}
+
+.inventory-item:active {
+  transform: scale(1.2); 
+  border: 3px solid orange;
+}
+
+a:hover {
+  text-decoration: none;
+  color: goldenrod;
 }
 
 .event-image {
