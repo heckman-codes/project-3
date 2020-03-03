@@ -61,7 +61,23 @@ function Home() {
                 onRequestClose={closeModal}
                 style={customStyles}
                 contentLabel="Example Modal"
-            />
+            >
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <h5 className="modal-title">Modal title</h5>
+                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div className="modal-body">
+                        <p>Modal body text goes here.</p>
+                    </div>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Login</button>
+                        <button type="button" className="btn btn-primary">Sign-Up</button>
+                    </div>
+                </div>
+            </Modal>
         </div>
     );
 }
@@ -69,7 +85,7 @@ function Home() {
 export default Home;
 
 //     < !--Modal Pop - Up to Login or Sign - Up-- >
-//     <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+//     <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog"
 //         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 //         <div className="modal-dialog modal-dialog-centered" role="document">
 //             <div className="modal-content">
