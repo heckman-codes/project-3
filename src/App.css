@@ -7,13 +7,46 @@
   pointer-events: none;
 }
 
+.toolytip:hover .toolytipdata {
+  display: block;
+}
+
+
+.toolytipdata {
+  display: none;
+  background: black;
+  color: white;
+  /* margin-left: 28px; */
+  padding: 10px;
+  position: absolute;
+  z-index: 1000;
+  width:200px;
+}
+
+.toolytip {
+  margin:0px;
+}
+
+.toolytip-body-text {
+  font-family: 'Arcade';
+  font-size: 12px !important;
+  text-transform: uppercase;
+  padding-left: 0px
+}
+
 nav {
   background-color: #333333 !important;
 }
 
 body {
   /* background-color: #222222; */
-  background-image: url("./images/body_battern.png");
+  /* background-image: url("./images/body_battern.png"); */
+  background-image: url("./images/bg-img.png");
+  background-size: cover;
+}
+
+#stat-container {
+  margin-top: 40px;
 }
 
 .col {
@@ -35,14 +68,19 @@ li.inv-item {
     padding: none;
 }
 
+.inventory-item {
+  width: 100%;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
 .event-text {
   padding: 0 20px;
 }
 
-.inv-item:hover {
-  transform: scale(1.4); 
-  /* border: 3px solid white; */
-  cursor: pointer;
+.inventory-item:hover {
+  transform: scale(1.2); 
+  border: 3px solid white;
 }
 
 .event-image {
@@ -52,6 +90,10 @@ li.inv-item {
 
 .event-img-file {
   width: 100%;
+}
+
+#inventory {
+padding: 0;
 }
 
 .logo-img {
@@ -64,7 +106,6 @@ li.inv-item {
   border-left: none;
   padding-top: 20px;
   background-color: #282c34;
-  max-height: 337px !important;
 }
 
 p {
@@ -76,12 +117,32 @@ p {
   margin-top: 0;
 }
 
-.right-align {
+h5 {
+  color: white;
+  font-family: 'Pixel';
+  text-transform: uppercase;
+  font-size: 30px;
+  margin-top: 2px;
+}
+
+h4 {
+  color: white;
+  font-family: 'Pixel';
+  text-transform: uppercase;
+  font-size: 30px;
+  margin-top: 2px;
+}
+
+/* .right-align {
   padding-right: 10px !important;
 }
 
 .left-align {
   padding-left: 10px !important;
+} */
+
+p #hp-value {
+  padding-left: 0 !important;
 }
 
 .row {
@@ -113,9 +174,9 @@ p {
 }
 
 .player-pic {
-  max-width: 200px;
+  max-width: 150px;
   background-color: gold;
-  border-radius: 100%;
+  /* border-radius: 100%; */
   /* border: 3px solid white; */
   margin: 0 auto !important;
   /* box-shadow: 3px 3px 10px .9 black; */
@@ -152,7 +213,7 @@ p {
   text-transform: uppercase;
   padding: 0;
   margin: 0;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .game {
