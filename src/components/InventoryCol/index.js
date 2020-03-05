@@ -23,7 +23,7 @@ function InventoryCol(props) {
             <p id="inventory" className="center-align">Items</p>
             <ul>
                 {inventory.map(el =>
-                    <li className="col s10 offset-s1 container toolytip" key={el.item_id}>
+                    <li className="col s10 offset-s1 container toolytip" key={el.item_id} onClick={() => props.removeItem(el.item_id)}>
                         <img alt="inventory-item" className="inventory-item" onClick={() => { props.actionMethod(el.action) }} src={el.image} />
                         <span className="toolytipdata">
                             <h4>{el.name}</h4>
