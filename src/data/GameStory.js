@@ -9,7 +9,7 @@ export default [
             {
                 text: "Leave without visiting the shop.",
                 nextText: 2,
-                action: []
+                action: [1]
             },
             {
                 text: "Visit Old Pete's Shop.",

@@ -11,33 +11,23 @@ import playableCharacters from '../../data/Characters';
 
 function Game() {
 
-    // const [playerState, setPlayerState] = useState({
-    //     player_id: 1,
-    //     name: "Adam",
-    //     occupation: "Rapper",
-    //     image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/character-test.png",
-    //     hp: 100,
-    //     money: 100,
-    //     fuel: 100,
-    //     food: 100,
-    //     state: 1,
-    //     inventory: [{ name: "Gun", desc: "This is a gun", image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/item_gun.gif", item_id: 2 }, { name: "Map", desc: "This is a Map", image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/item_map.gif", item_id: 3 }]
-    // });
-
     const [playerState, setPlayerState] = useState(playableCharacters[3]);
-    const [storyState, setStoryState] = useState({
-        id: 0,
-        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/breakingbad.gif",
-        title: "Introduction",
-        text: "It’s been five years since the cataclysm.You’ve been etching out a living in what remains of Sacramento.The landscape of skyscrapers and towering structures had been reduced to smoldering piles of rubble from the near daily earthquakes.You’ve scraped by on supplies from various looting runs, but everything seems to be running out.The time to journey east is now.You’ve been modifying an old ford to make the journey, welding on armor and siphoning what gas you can.Before the signal died out last year, you picked up a radio signal repeating the message “Washington D.C.is the last remaining safe zone.For anyone listening, if you can make it here, we can help you.” You could hit the road now, or make one last stop at old Pete’s and buy additional supplies.",
-        options: [{ text: "Leave without visiting the shop.", action: [50, 1, 2, 3, 4], nextText: 1.1 }, { text: "Visit Old Pete's Shop.", action: 2, nextText: 1.2 }]
-    });
+    const [storyState, setStoryState] = useState(GameStory[0]);
+
 
     const fetchState = (nextText) => GameStory.filter(instance => nextText === instance.id)[0];
 
     const setStory = (nextText) => {
         var storyStatus = fetchState(nextText);
         setStoryState(storyStatus);
+    }
+
+    const removeItem = (item_id) => {
+        if (playerState.inventory.length === 1) {
+            playerState.inventory = [];
+        } else if (playerState.inventory.length >= 2) {
+            playerState.inventory.splice(item_id, 1);
+        }
     }
 
 
@@ -55,22 +45,112 @@ function Game() {
             switch (action) {
 
                 case 1:
-                    health = health - 10;
-                    break;
-                case 2:
-                    food = food + 10;
-                    break;
-                case 3:
-                    fuel = fuel + 10;
-                    break;
-                case 4:
-                    money = money + 10;
-                    break;
-                case 50:
-                    console.log(inventoryArr);
                     if (inventoryArr.filter(e => e.item_id === 0).length === 0) {
                         inventoryArr = playerState.inventory.concat([useableItems[0]]);
                     }
+                    break;
+                case 2:
+                    if (inventoryArr.filter(e => e.item_id === 1).length === 0) {
+                        inventoryArr = playerState.inventory.concat([useableItems[1]]);
+                    }
+                    break;
+                case 3:
+                    if (inventoryArr.filter(e => e.item_id === 2).length === 0) {
+                        inventoryArr = playerState.inventory.concat([useableItems[2]]);
+                    }
+                    break;
+                case 4:
+                    if (inventoryArr.filter(e => e.item_id === 3).length === 0) {
+                        inventoryArr = playerState.inventory.concat([useableItems[3]]);
+                    }
+                    break;
+                case 5:
+                    if (inventoryArr.filter(e => e.item_id === 4).length === 0) {
+                        inventoryArr = playerState.inventory.concat([useableItems[4]]);
+                    }
+                    break;
+                case 6:
+                    if (inventoryArr.filter(e => e.item_id === 5).length === 0) {
+                        inventoryArr = playerState.inventory.concat([useableItems[5]]);
+                    }
+                    break;
+                case 7:
+                    food = food - 15;
+                    break;
+                case 8:
+                    food = food - 5;
+                    break;
+                case 9:
+                    food = food + 10;
+                    break;
+                case 10:
+                    food = food + 4
+                    break;
+                case 11:
+                    food = food + 5
+                    break;
+                case 12:
+                    fuel = fuel - 5;
+                    break;
+                case 13:
+                    fuel = fuel + 10;
+                    break;
+                case 14:
+                    fuel = fuel + 3
+                    break;
+                case 15:
+                    health = health - 10;
+                    break;
+                case 16:
+                    health = health - 15;
+                    break;
+                case 17:
+                    health = health - 5;
+                    break;
+                case 18:
+                    health = health + 1;
+                    break;
+                case 19:
+                    health = health + 10;
+                    break;
+                case 20:
+                    health = health + 5;
+                    break;
+                case 21:
+                    money = money + 10;
+                    break;
+                case 22:
+                    money = money + 20;
+                    break;
+                case 23:
+                    money = money + 25;
+                    break;
+                case 24:
+                    money = money + 5;
+                    break;
+                case 25:
+                    money = money - 5;
+                    break;
+                case 26:
+                    money = money - 10;
+                    break;
+                case 27:
+                    money = money - 15;
+                    break;
+                case 28:
+                    money = money - 20;
+                    break;
+                case 29:
+                    money = money - 25;
+                    break;
+                case 30:
+                    money = money - 50;
+                    break;
+                case 31:
+                    food = food + 10;
+                    break;
+                case 32:
+                    fuel = fuel + 15;
                     break;
 
                 default:
@@ -93,7 +173,8 @@ function Game() {
                         <GameCol actionMethod={actions}
                             storyMethod={setStory} />
                         <InventoryCol actionMethod={actions}
-                            storyMethod={setStory} />
+                            storyMethod={setStory}
+                            removeItem={removeItem} />
                     </Row>
                 </PlayerContext.Provider>
             </StoryContext.Provider>
