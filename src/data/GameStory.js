@@ -8,12 +8,13 @@ export default [
         options: [
             {
                 text: "Leave without visiting the shop.",
-                nextText: 2,
-                action: [1]
+                nextText: 1.1,
+                action: []
+
             },
             {
                 text: "Visit Old Pete's Shop.",
-                nextText: 2,
+                nextText: 1.2,
                 action: []
             }
         ]
@@ -48,16 +49,15 @@ export default [
         id: 2,
         title: "Welcome to Old Pete's Caravan",
         text: "You enter old Pete’s mobile home, greeted by a familiar but still overwhelming stench. Pete had a way of scavenging and crafting useful supplies, and was one of the few folks out there still accepting paper currency. ‘I still don’t see why you believe in that safezone nonsense,’a gruff voice bellows out from behind his scruffy moustache. But I guess this is goodbye then. Better stock up before you go, anything here you lookin to buy?.",
+        image: "",
         options: [
             {
                 text: "Would you like to purchase an axe?",
-                setState: { axe: true },
                 nextText: 3,
                 action: []
             },
             {
                 text: "Would you like to purchase food for your travels?",
-                setState: { food: true },
                 nextText: 3,
                 action: []
             },
@@ -1034,11 +1034,6 @@ export default [
                 text: "Continue",
                 nextText: 22,
                 action: []
-            },
-            {
-                text: "Continue",
-                nextText: 22,
-                action: []
             }
         ]
     },
@@ -1052,12 +1047,191 @@ export default [
                 text: "Continue",
                 nextText: 22,
                 action: []
+            }
+        ]
+    },
+    {
+        id: 22,
+        title: "Health Checkpoint",
+        text: "You come across a group of armed soldiers alongside the road. They claim to be performing health checks on anyone making their way to D.C. They ask you to step out of the car.",
+        image: "",
+        options: [
+            {
+                text: "Allow health check?",
+                nextText: 22.1,
+                // action: -15 health - 15 food
+                action: []
             },
             {
-                text: "Continue",
-                nextText: 22,
+                text: "Skip health check, floor it!",
+                nextText: 22.2,
+                // action: - 5 fuel
                 action: []
             }
         ]
-    }
+    },
+    {
+        id: 22.1,
+        title: "Health Checkpoint",
+        text: "The men reveal themselves to be bandits, rough you up, and steal most of your food.",
+        image: "",
+        options: [
+            {
+                text: "Continue",
+                nextText: 23,
+                action: []
+            }
+        ]
+    },
+    {
+        id: 22.2,
+        title: "Health Checkpoint",
+        text: "Smelling a trap, you slam on the gasl. A few stray bullets pierce your car but you escape mostly unharmed.",
+        image: "",
+        options: [
+            {
+                text: "Continue",
+                nextText: 23,
+                action: []
+            }
+        ]
+    },
+    {
+        id: 23,
+        title: "OH NO",
+        text: "While looting inside an old house, you start to hear the sound of a creepy little girl singing. Ah jeez. You turn around and, yep, that’s a scary ass little girl in a white dress being all creepy. Oh this is bad. What is even happening. The walls start to melt.",
+        image: "",
+        options: [
+            {
+                text: "Run Away?",
+                nextText: 23.1,
+                // action: - 5 health
+                action: []
+            },
+            {
+                text: "Fly Away?",
+                nextText: 23.2,
+                // action: + 5 health
+                action: []
+            }
+        ]
+    },
+    {
+        id: 23.1,
+        title: "OH NO",
+        text: "You run down the halls, the exit getting further and further away. The singing gets louder, soon your teeth all fall out. And you’re in highschool again and….You wake up. The nightmare prevented you from getting restful sleep, you drive groggy.",
+        image: "",
+        options: [
+            {
+                text: "Continue",
+                nextText: 23,
+                action: []
+            }
+        ]
+    },
+    {
+        id: 23.2,
+        title: "OH NO",
+        text: "You realize that even though a lot of weird things have been happening, this is definitely a dream. You manage to fly away before waking up, feeling well rested.",
+        image: "",
+        options: [
+            {
+                text: "Continue",
+                nextText: 23,
+                action: []
+            }
+        ]
+    },
+    {
+        id: 24,
+        title: "Winter is Coming",
+        text: "While looting, fine white powder starts falling from the sky, landing in neat piles alonsite. A wintery sort of landscape begins to form.",
+        image: "",
+        options: [
+            {
+                text: "Try catching some on your tongue",
+                nextText: 24.1,
+                // action: -5 health
+                action: []
+            },
+            {
+                text: "Get back to the car",
+                nextText: 24.2,
+                action: []
+            }
+        ]
+    },
+    {
+        id: 24.1,
+        title: "Winter is Coming",
+        text: "You try catching some flakes on your tongue, but the white specs feel warm on touch. What you thought was snow turns out to be ash. You cought and sputter, making your way back to the car.",
+        image: "",
+        options: [
+            {
+                text: "Continue",
+                nextText: 25,
+                action: []
+            }
+        ]
+    },
+    {
+        id: 24.2,
+        title: "Winter is Coming",
+        text: "You get back to the car and keep driving, the windshield wipers swiping the ash from your windshield.",
+        image: "",
+        options: [
+            {
+                text: "Continue",
+                nextText: 25,
+                action: []
+            }
+        ]
+    },
+    {
+        id: 25,
+        title: "The Home Stretch",
+        text: "The large concrete barrier surrounding D.C. appears on the horizon. You’re within miles of your destination. Suddenly, your car starts to sputter, black smoke begins billowing from the hood.",
+        image: "",
+        options: [
+            {
+                text: "Keep driving",
+                nextText: 25.1,
+                // action: -10 health
+                action: []
+            },
+            {
+                text: "Make a run for it",
+                nextText: 25.2,
+                // action: - 5 health
+                action: []
+            }
+        ]
+    },
+    {
+        id: 25.1,
+        title: "The Home Stretch",
+        text: "The car just has to last for a few more minutes, you can’t stop now. Black smoke starts filling the vehicle. Before you know it, you’ve crashed into the gates of D.C.",
+        image: "",
+        options: [
+            {
+                text: "Continue",
+                nextText: 26,
+                action: []
+            }
+        ]
+    },
+    {
+        id: 25.2,
+        title: "The Home Stretch",
+        text: "You leave some supplies, but that’s not important. You run, body exhausted from driving, the car starts burning behind you. You’re can see the entrance gates…",
+        image: "",
+        options: [
+            {
+                text: "Continue",
+                nextText: 26,
+                action: []
+            }
+        ]
+    },
+
 ]
