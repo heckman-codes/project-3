@@ -20,11 +20,12 @@ export default [
         id: 1.1,
         title: "Introduction",
         text: "You never were good at goodbyes, and Pete’s scavenging skills are as faded as his memory these days. You rev up the engine and begining your journey across US 50.",
-        // image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/desert.png",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/desert.png",
         options: [
             {
                 text: "Continue",
-                nextText: 3
+                nextText: 3,
+                action: []
             }
         ]
     },
@@ -32,7 +33,7 @@ export default [
         id: 1.2,
         title: "Introduction",
         text: "You decide to visit old Pete one last time and see what he has that might be useful for the long journey.",
-        // image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/desert.png",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/desert.png",
         options: [
             {
                 text: "Continue",
@@ -65,7 +66,7 @@ export default [
         id: 2.1,
         title: "Introduction",
         text: "You start the engine, wave one last goodbye to Pete, and begin your journey eastward.",
-        // image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/desert.png",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/desert.png",
         options: [
             {
                 text: "Continue",
