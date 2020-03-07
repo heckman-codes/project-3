@@ -40,8 +40,6 @@ function Home() {
 
     function login() {
         setIsOpen(false)
-        // href = "/login"
-
     }
 
     function signUp() {
