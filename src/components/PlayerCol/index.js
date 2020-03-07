@@ -39,7 +39,7 @@ function PlayerCol() {
                             <img className="right-align" style={{ maxWidth: 40 + "px" }} alt="HP" src="https://project-3-arcade-game.s3-us-west-2.amazonaws.com/gascan.gif" />
                         </div>
                         <div className="col s6">
-                            <h5 className="left-align" id="gas-value">{fuel}%</h5>
+                            <h5 className="left-align" id="gas-value">{fuel}</h5>
                         </div>
                     </div>
                 </div>

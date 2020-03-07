@@ -11,34 +11,69 @@ import playableCharacters from '../../data/Characters';
 
 function Game() {
 
+    // The code below is intended to load the player's state from MongoDB and then set that as the view state.
+    // Eventually, if you die or win it loads a new storyState and you can choose a new character by clicking and option that
+    // takes you to the character selection menu
+
+    // const setGameState = () => {
+    //If Logged in = true
+    //GET player profile where token equal player_id
+    //playerProfile = player file that was retrieved
+    //setPlayerState(playerProfile)
+
+    // for (let i =0; i <GameStory.length; i++){
+    //     if (playerProfile.state === GameStory[i].id){
+    //         setStoryState(GameStory[i])
+    //     }
+    // }
+    // }
+
+    // let playerProfile;
+
+    // document.onload(setGameState);
+
+
     const [playerState, setPlayerState] = useState(playableCharacters[3]);
+    // const [playerState, setPlayerState] = useState(playerProfile);
+
     const [storyState, setStoryState] = useState(GameStory[0]);
 
 
     const fetchState = (nextText) => GameStory.filter(instance => nextText === instance.id)[0];
 
     const setStory = (nextText) => {
-        var storyStatus = fetchState(nextText);
+        let storyStatus = fetchState(nextText);
         setStoryState(storyStatus);
     }
 
-    const removeItem = (item_id) => {
+    const removeItem = (name) => {
         if (playerState.inventory.length === 1) {
             playerState.inventory = [];
-        } else if (playerState.inventory.length >= 2) {
-            playerState.inventory.splice(item_id, 1);
+        } else {
+            // for (var i = 0; i < playerState.inventory.length; i++) {
+            //     var obj = playerState.inventory[i];
+
+            //     if (listToDelete.indexOf(obj.id) !== -1) {
+            //         playerState.inventory.splice(i, 1);
+            //         i--;
+            //     }
+            // }
+            playerState.inventory.splice(name, 1);
         }
     }
 
 
+
+
     const actions = (actions) => {
-        console.log(actions);
+        // console.log(actions);
         let health = playerState.hp;
         let food = playerState.food;
         let fuel = playerState.fuel;
         let money = playerState.money;
         let inventoryArr = playerState.inventory;
-        // console.log(inventory)
+        let stateNum = storyState.id;
+        console.log(stateNum);
         for (let i = 0; i < actions.length; i++) {
             const action = actions[i];
 
@@ -157,8 +192,8 @@ function Game() {
                     break
             }
         }
-        setPlayerState({ ...playerState, food: food, hp: health, inventory: inventoryArr, money: money, fuel: fuel });
-        // console.log(inventoryArr);
+        setPlayerState({ ...playerState, food: food, hp: health, inventory: inventoryArr, money: money, fuel: fuel, state: stateNum });
+        console.log({ playerState });
 
 
     }
