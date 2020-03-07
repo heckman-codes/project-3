@@ -6,6 +6,10 @@ var db = require("./src/models");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+
+const cookieParser = require('cookie-parser');
+const jwt = require('jsonwebtoken');
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -13,8 +17,22 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
+app.use(cookieParser());
 // Add routes, both API and view
 app.use(routes);
+
+app.use((req, res, next) => {
+  const token = req.cookies.token;
+
+  if (token) {
+    const { id } = jwt.verify(token, process.env.APP_SECRET);
+
+    req.user = id;
+  }
+
+  next();
+});
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/thelongway");
