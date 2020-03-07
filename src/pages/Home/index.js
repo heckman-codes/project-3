@@ -5,6 +5,7 @@ import "../Home/style.css"
 // import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import Signup from "../Home/Signup";
+import Login from "../Home/Login";
 // import HomeCol from "../../components/HomeCol";
 // import HomeRow from "../../components/HomeRow"
 
@@ -27,15 +28,21 @@ function Home() {
     }, []
     )
 
-    const [signUpIsOpen, setsignUpIsOpen] = React.useState(false);
-    function openSignup() {
-        setsignUpIsOpen(true);
-    }
 
     // var subtitle;
     const [modalIsOpen, setIsOpen] = React.useState(false);
     function openModal() {
         setIsOpen(true);
+    }
+
+    const [signUpIsOpen, setsignUpIsOpen] = React.useState(false);
+    function openSignup() {
+        setsignUpIsOpen(true);
+    }
+
+    const [loginIsOpen, setLoginIsOpen] = React.useState(false);
+    function openLogin() {
+        setLoginIsOpen(true);
     }
 
     function afterOpenModal() {
@@ -49,27 +56,41 @@ function Home() {
 
     function login(event) {
         // setIsOpen(true)
-        //     ("modal-body-main").empty()
+        ("modal-body-main").empty()
+        event.preventDefault();
+        const target = event.target;
+        const username = target.username;
+        const password = target.password;
+        const confirmPassword = target.confirmPassword;
 
-        // const target = event.target;
-        // const username = target.username;
-        // const password = target.password;
-        // const confirmPassword = target.confirmPassword;
+        let userData = {
+            username: username,
+            password: password,
+            confirmPassword: confirmPassword
+        };
 
-        // let userData = {
-        //     username: username,
-        //     password: password,
-        //     confirmPassword: confirmPassword
-        // };
-
-        // console.log(userData);
+        console.log(userData);
     }
 
-    function signUp() {
+    function signUp(event) {
         // signUpOpen(true)
 
+        ("modal-body-main").empty()
+        event.preventDefault();
+        const target = event.target;
+        const username = target.username;
+        const password = target.password;
+        const confirmPassword = target.confirmPassword;
 
+        let userData = {
+            username: username,
+            password: password,
+            confirmPassword: confirmPassword
+        };
+
+        console.log(userData);
     }
+
 
     return (
         <div>
@@ -95,7 +116,7 @@ function Home() {
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                {<div className="modal-content">
+                {/* {<div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title">Ready to Play?</h5>
                     </div>
@@ -103,19 +124,42 @@ function Home() {
                         <p>Please Login Or Sign-Up!</p>
                     </div>
                     <div className="modal-footer">
-                        <button onClick={login} type="button" className="btn btn-primary">Login</button>
+                        <button onClick={openLogin} type="button" className="btn btn-primary">Login</button>
                         <button onClick={openSignup} type="button" className="btn btn-primary">Sign-Up</button>
-                    </div>
+                    </div> */}
 
-                    {signUpIsOpen ?
-                        <div>
-                            <Signup />
-                        </div> : null
-                    }
+                {!signUpIsOpen && !loginIsOpen ?
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title">Ready to Play?</h5>
+                        </div>
+                        <div className="modal-body-main">
+                            <p>Please Login Or Sign-Up!</p>
+                        </div>
+                        <div className="modal-footer">
+                            <button onClick={openLogin} type="button" className="btn btn-primary">Login</button>
+                            <button onClick={openSignup} type="button" className="btn btn-primary">Sign-Up</button>
+                        </div>
+                    </div> : null
+                }
 
-                </div>}
+                {signUpIsOpen && !loginIsOpen ?
+                    <div>
+                        <Signup onSubmit={signUp} />
+                    </div> : null
+                }
+
+                {loginIsOpen && !signUpIsOpen ?
+                    <div>
+                        <Login onSubmit={login} />
+                    </div> : null
+                }
+
+
+
+
             </Modal>
-        </div>
+        </div >
     );
 }
 

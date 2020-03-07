@@ -29,17 +29,29 @@ const Signup = (props) => {
                                 type="password"
                                 placeholder="Password"
                                 name="password"
+                                value={password}
                                 onChange={e => setPassword(e.target.value)}
                             />
                         </HomeCol>
                     </HomeRow>
+
+                    <HomeRow className="form-group">
+                        <HomeCol size="12">
+                            <input
+                                className="form-control"
+                                type="password"
+                                placeholder="Confirm Password"
+                                name="confirmPassword"
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+
+                            />
+                        </HomeCol>
+                    </HomeRow>
+
                     <button className="btn btn-success" type="submit">
                         Submit
                     </button>
-                </HomeContainer>
-                <HomeContainer className="mt-4">
-                    <h3>Hello {username}!</h3>
-                    <p>I probably shouldn't tell you this, but your password is {password}!</p>
                 </HomeContainer>
             </form>
         </div>
