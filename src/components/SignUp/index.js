@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import HomeContainer from "../../components/HomeContainer";
 import HomeCol from "../../components/HomeCol";
 import HomeRow from "../../components/HomeRow";
+import "../../pages/Home/style.css";
 
 const Signup = (props) => {
     const [username, setUsername] = useState();
@@ -10,7 +11,10 @@ const Signup = (props) => {
     return (
         <div>
             <form onSubmit={props.onSubmit}>
-                <HomeContainer className="mt-3 px-5">
+                <HomeContainer className="mt-3 px-5" id="sign-up-container">
+                    <HomeRow>
+                        <h3>Please Sign Up Below.</h3>
+                    </HomeRow>
                     <HomeRow className="form-group">
                         <HomeCol size="12">
                             <input
@@ -49,8 +53,8 @@ const Signup = (props) => {
                         </HomeCol>
                     </HomeRow>
 
-                    <button className="btn btn-success" type="submit">
-                        Submit
+                    <button className="btn btn-success" type="submit" id="signUpBtn">
+                        Sign Up
                     </button>
                 </HomeContainer>
             </form>

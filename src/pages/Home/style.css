@@ -12,6 +12,11 @@
     color: #333333;
 }
 
+#sign-up-container, #login-container {
+    font-family: "Arcade";
+    color: #333333;
+}
+
 .modal-title, p {
     color: #333333;
 }
