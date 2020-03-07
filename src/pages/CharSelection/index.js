@@ -9,16 +9,20 @@ function CharSelection(props) {
             if (name === playableCharacters[i].name)
                 playerObject = playableCharacters[i]
         }
+        // playerObject.player_id = /* USERNAME COOKIE ID OR WHATEVER */
         console.log(playerObject);
     }
 
     const setStartState = () => {
-        console.log(playerObject)
+        // console.log(playerObject)
         if (playerObject === undefined) {
             console.log("Pick a character first")
+            alert("Pick a character before your continue");
             //Modal or alert that tells you to pick a character first
+        } else {
+            console.log("You chose: " + playerObject.name)
+            //save to MongoDB and then switch to game page
         }
-        //save to MongoDB and then switch to game page
     }
 
     return (
