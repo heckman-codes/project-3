@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import PlayerContext from '../../utils/PlayerContext'
 
 function InventoryCol(props) {
 
-    // const [toolTip, setTooltip] = useState();
+    const { inventory } = useContext(PlayerContext);
 
     var toolytip = document.getElementsByClassName('.toolytip');
 
@@ -15,39 +16,21 @@ function InventoryCol(props) {
         }
     }
 
+    console.log(props)
+
     return (
-        <div className="col s1 inventory-col" {...props}>
+        <div className="col s1 inventory-col">
             <p id="inventory" className="center-align">Items</p>
             <ul>
-                <li className="col s10 offset-s1 container toolytip">
-                    <img alt="inventory-item" className="inventory-item" src="https://project-3-arcade-game.s3-us-west-2.amazonaws.com/item_gun.gif" />
-                    <span className="toolytipdata">
-                        <h4>Gun</h4>
-                        <p className="toolytip-body-text">Defeat any combat encounter with this.</p>
-                    </span>
-                </li>
-                <li className="col s10 offset-s1 container toolytip">
-                    <img alt="inventory-item" className="inventory-item" src="https://project-3-arcade-game.s3-us-west-2.amazonaws.com/item_walkieTalkie.gif" />
-                    <span className="toolytipdata">
-                        <h4>Walkie Talkie</h4>
-                        <p className="toolytip-body-text">Call in Old Pete any time you need him. Remember, he owes you. Big time.</p>
-                    </span>
-                </li>
-                <li className="col s10 offset-s1 container toolytip">
-                    <img alt="inventory-item" className="inventory-item" src="https://project-3-arcade-game.s3-us-west-2.amazonaws.com/item_map.gif" />
-                    <span className="toolytipdata">
-                        <h4>Map</h4>
-                        <p className="toolytip-body-text">I'm not a cartographer but someone might be able to read this.</p>
-                    </span>
-                </li>
-                <li className="col s10 offset-s1 container toolytip">
-                    <img alt="inventory-item" className="inventory-item" src="https://project-3-arcade-game.s3-us-west-2.amazonaws.com/item_key.gif" />
-                    <span className="toolytipdata">
-                        <h4>Key</h4>
-                        <p className="toolytip-body-text">This looks like it can unlock something.</p>
-                    </span>
-                </li>
-
+                {inventory.map(el =>
+                    <li className="col s10 offset-s1 container toolytip" key={el.item_id} onClick={() => props.removeItem(el.item_id)}>
+                        <img alt="inventory-item" className="inventory-item" onClick={() => { props.actionMethod(el.action) }} src={el.image} />
+                        <span className="toolytipdata">
+                            <h4>{el.name}</h4>
+                            <p className="toolytip-body-text">{el.desc}</p>
+                        </span>
+                    </li>
+                )}
             </ul>
         </div>
     );
