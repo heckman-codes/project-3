@@ -44,7 +44,7 @@ const useableItems = [
     {
         item_id: 6,
         name: "Walkie Talkie",
-        desc: "This is a Walkie Talkie",
+        desc: "This is a Walkie Talkie. Over.",
         image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/item_walkieTalkie.gif",
         action: []
     },

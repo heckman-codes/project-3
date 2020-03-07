@@ -220,7 +220,8 @@ p #hp-value {
 }
 
 .player-pic {
-  max-width: 150px;
+  width: 100%;
+  max-width: 150px; 
   /* border-radius: 100%; */
   /* border: 3px solid white; */
   margin: 0 auto !important;
@@ -282,7 +283,7 @@ p #hp-value {
 
 .char-select:focus {
   transform: scale(1.05);
-  border: 1px solid goldenrod;
+  border: 4px solid rgb(23, 182, 23);
 }
 
 .continue-btn {
