@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 // import Test from "../../components/Modal"
 import "../Home/style.css"
-import ReactDOM from 'react-dom';
+// import { BrowserRouter as Route } from "react-router-dom";
+// import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
-import FirstModal from '../../components/FirstModal';
-// import Login from '../../components/Login';
-// import SignUp from '../../components/SignUp';
+import Signup from "../Home/Signup";
+// import HomeCol from "../../components/HomeCol";
+// import HomeRow from "../../components/HomeRow"
 
 const customStyles = {
     content: {
@@ -26,6 +27,11 @@ function Home() {
     }, []
     )
 
+    const [signUpIsOpen, setsignUpIsOpen] = React.useState(false);
+    function openSignup() {
+        setsignUpIsOpen(true);
+    }
+
     // var subtitle;
     const [modalIsOpen, setIsOpen] = React.useState(false);
     function openModal() {
@@ -41,17 +47,29 @@ function Home() {
         setIsOpen(false);
     }
 
-    // function firstView() {
-    //     if (login === false && signUp === false) {
-    //         return (
-    //             <FirstModal />
-    //         )
-    //     }
-    // }
+    function login(event) {
+        // setIsOpen(true)
+        //     ("modal-body-main").empty()
 
-    // function login() {
-    //     if ({ login })
-    // }
+        // const target = event.target;
+        // const username = target.username;
+        // const password = target.password;
+        // const confirmPassword = target.confirmPassword;
+
+        // let userData = {
+        //     username: username,
+        //     password: password,
+        //     confirmPassword: confirmPassword
+        // };
+
+        // console.log(userData);
+    }
+
+    function signUp() {
+        // signUpOpen(true)
+
+
+    }
 
     return (
         <div>
@@ -77,9 +95,25 @@ function Home() {
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                {
-                    <FirstModal />
-                }
+                {<div className="modal-content">
+                    <div className="modal-header">
+                        <h5 className="modal-title">Ready to Play?</h5>
+                    </div>
+                    <div className="modal-body-main">
+                        <p>Please Login Or Sign-Up!</p>
+                    </div>
+                    <div className="modal-footer">
+                        <button onClick={login} type="button" className="btn btn-primary">Login</button>
+                        <button onClick={openSignup} type="button" className="btn btn-primary">Sign-Up</button>
+                    </div>
+
+                    {signUpIsOpen ?
+                        <div>
+                            <Signup />
+                        </div> : null
+                    }
+
+                </div>}
             </Modal>
         </div>
     );
