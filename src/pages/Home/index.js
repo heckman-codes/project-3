@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
-// import Test from "../../components/Modal"
+
 import "../Home/style.css"
-// import { BrowserRouter as Route } from "react-router-dom";
-// import ReactDOM from 'react-dom';
+
 import Modal from 'react-modal';
-import Signup from "../Home/Signup";
-import Login from "../Home/Login";
-// import HomeCol from "../../components/HomeCol";
-// import HomeRow from "../../components/HomeRow"
+import Signup from "../../components/SignUp";
+import Login from "../../components/Login"
 
 const customStyles = {
     content: {
@@ -116,18 +113,7 @@ function Home() {
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                {/* {<div className="modal-content">
-                    <div className="modal-header">
-                        <h5 className="modal-title">Ready to Play?</h5>
-                    </div>
-                    <div className="modal-body-main">
-                        <p>Please Login Or Sign-Up!</p>
-                    </div>
-                    <div className="modal-footer">
-                        <button onClick={openLogin} type="button" className="btn btn-primary">Login</button>
-                        <button onClick={openSignup} type="button" className="btn btn-primary">Sign-Up</button>
-                    </div> */}
-
+                {/* Initial Modal View */}
                 {!signUpIsOpen && !loginIsOpen ?
                     <div className="modal-content">
                         <div className="modal-header">
@@ -143,12 +129,14 @@ function Home() {
                     </div> : null
                 }
 
+                {/* Show Sign-Up Modal View */}
                 {signUpIsOpen && !loginIsOpen ?
                     <div>
                         <Signup onSubmit={signUp} />
                     </div> : null
                 }
 
+                {/* Show Login Modal View */}
                 {loginIsOpen && !signUpIsOpen ?
                     <div>
                         <Login onSubmit={login} />
