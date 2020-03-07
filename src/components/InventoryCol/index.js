@@ -16,15 +16,15 @@ function InventoryCol(props) {
         }
     }
 
-    console.log(props)
+    // console.log(props)
 
     return (
         <div className="col s1 inventory-col">
             <p id="inventory" className="center-align">Items</p>
             <ul>
                 {inventory.map(el =>
-                    <li className="col s10 offset-s1 container toolytip" key={el.item_id} onClick={() => props.removeItem(el.item_id)}>
-                        <img alt="inventory-item" className="inventory-item" onClick={() => { props.actionMethod(el.action) }} src={el.image} />
+                    <li className="col s10 offset-s1 container toolytip" key={el.item_id}>
+                        <img alt="inventory-item" className="inventory-item" onClick={() => { props.removeItem(el.nap); props.actionMethod(el.action); console.log(inventory.length) }} src={el.image} />
                         <span className="toolytipdata">
                             <h4>{el.name}</h4>
                             <p className="toolytip-body-text">{el.desc}</p>
@@ -32,7 +32,7 @@ function InventoryCol(props) {
                     </li>
                 )}
             </ul>
-        </div>
+        </div >
     );
 }
 

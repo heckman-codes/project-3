@@ -4,7 +4,7 @@ export default [
         id: 1,
         title: "Introduction",
         text: "It’s been five years since the cataclysm. You’ve been etching out a living in what remains of Sacramento. The landscape of skyscrapers and towering structures had been reduced to smoldering piles of rubble from the near daily earthquakes. You’ve scraped by on supplies from various looting runs, but everything seems to be running out. The time to journey east is now. You’ve been modifying an old ford to make the journey, welding on armor and siphoning what gas you can. Before the signal died out last year, you picked up a radio signal repeating the message “Washington D.C. is the last remaining safe zone. For anyone listening, if you can make it here, we can help you.” You could hit the road now, or make one last stop at old Pete’s and buy additional supplies.",
-        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/desert.png",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_1.gif",
         options: [
             {
                 text: "Leave without visiting the shop.",
@@ -23,7 +23,7 @@ export default [
         id: 1.1,
         title: "Introduction",
         text: "You never were good at goodbyes, and Pete’s scavenging skills are as faded as his memory these days. You rev up the engine and begining your journey across US 50.",
-        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/desert.png",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_1.gif",
         options: [
             {
                 text: "Continue",
@@ -36,7 +36,7 @@ export default [
         id: 1.2,
         title: "Introduction",
         text: "You decide to visit old Pete one last time and see what he has that might be useful for the long journey.",
-        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/desert.png",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_1.gif",
         options: [
             {
                 text: "Continue",
@@ -49,21 +49,21 @@ export default [
         id: 2,
         title: "Welcome to Old Pete's Caravan",
         text: "You enter old Pete’s mobile home, greeted by a familiar but still overwhelming stench. Pete had a way of scavenging and crafting useful supplies, and was one of the few folks out there still accepting paper currency. ‘I still don’t see why you believe in that safezone nonsense,’a gruff voice bellows out from behind his scruffy moustache. But I guess this is goodbye then. Better stock up before you go, anything here you lookin to buy?.",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_2.gif",
         options: [
             {
                 text: "Would you like to purchase an axe?",
-                nextText: 3,
-                action: []
+                nextText: 2.1,
+                action: [1]
             },
             {
                 text: "Would you like to purchase food for your travels?",
-                nextText: 3,
+                nextText: 2.1,
                 action: []
             },
             {
                 text: "No thanks I dont need any supplies, today.",
-                nextText: 3,
+                nextText: 2.1,
                 action: []
             }
         ]
@@ -72,7 +72,7 @@ export default [
         id: 2.1,
         title: "Introduction",
         text: "You start the engine, wave one last goodbye to Pete, and begin your journey eastward.",
-        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/desert.png",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_2.gif",
         options: [
             {
                 text: "Continue",
@@ -85,12 +85,12 @@ export default [
         id: 3,
         title: "Crunch",
         text: "CRRRRUNCH. A sickening crunch echoes under the wheels of your vehicle. Whatever it was may have damaged the chassis. Do you stop and examine or keep driving?.",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_3.gif",
         options: [
             {
                 text: "Stop and examine?",
                 nextText: 3.1,
-                action: []
+                action: [5]
             },
             {
                 text: "Keep Driving?",
@@ -103,7 +103,7 @@ export default [
         id: 3.1,
         title: "Crunch",
         text: "You stop the car and shine a light under the body. There’s nothing along the lines of viscera under the car, but you do unwedge a disturbingly long fragment of bone from the axel.",
-        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/desert.png",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_3-1.gif",
         // action: 1,
         // action 1 + bone
         options: [
@@ -118,7 +118,7 @@ export default [
         id: 3.2,
         title: "Crunch",
         text: "It’s dangerous to stop here, and given the length of the journey you’re sure plenty of things will end up flattened by your tires. Still, every now and then an uncomfortable jolt bumps up from below.",
-        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/desert.png",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_3-1.gif",
         // action: 2,
         // "action 2 -5 fuel"
         options: [
@@ -180,7 +180,7 @@ export default [
         id: 5,
         title: "Quiet Town",
         text: "While driving, you come across a small roadside town. By the looks of it, the place is totally abandoned",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_5.gif",
         options: [
             {
                 text: "Loot quickly and keep driving?",
@@ -198,7 +198,7 @@ export default [
         id: 5.1,
         title: "Quiet Town",
         text: "You mange to find a few necessities, but the place has been picked clean.",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_5.gif",
         // action: 5 +5 money, + 3 gas 
         options: [
             {
@@ -212,7 +212,7 @@ export default [
         id: 5.2,
         title: "Quiet Town",
         text: "You barricade yourself inside one of the houses for the night. It feels good to sleep somewhere other than the car. You mange to find some useful medicine as well",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_5.gif",
         // action: 6 +5 health, + Medicine 
         options: [
             {
@@ -226,7 +226,7 @@ export default [
         id: 6,
         title: "Heavy Rain",
         text: "A heavy rain begins to pour. The rain looks peculiar, almost thicker than normal. Still, it might be good to stop and refresh your water supply.",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_6.gif",
         options: [
             {
                 text: "Stop and collect rain?",
@@ -244,7 +244,7 @@ export default [
         id: 6.1,
         title: "Heavy Rain",
         text: "You stop for a while and collect rain water. However, as you observe in the container, it starts to wiggle on its own. You dump out what you’ve collect and lost a days worth of travel.",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_6.gif",
         // action: 7 -5 gas
         options: [
             {
@@ -258,7 +258,7 @@ export default [
         id: 6.2,
         title: "Heavy Rain",
         text: "You turn on the windshield wipers and speed ahead, the rain sticking more than it should.",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_6.gif",
         options: [
             {
                 text: "Continue",
@@ -449,7 +449,7 @@ export default [
         id: 10,
         title: "The Figure",
         text: "Driving late at night, your headlights begin to flicker. Suddenly, you notice a shadowy, humanoid figure standing in the middle of the road. It’s too late to stop.",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_10.gif",
         options: [
             {
                 text: "Swerve out of the way?",
@@ -467,7 +467,7 @@ export default [
         id: 10.1,
         title: "Vegas Baby",
         text: "You swerve out of the way at the last minute, burning out offroad. You quickly course correct, but see no sign of the figure in your rearview mirrors.",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_11.gif",
         // action: -5 gas
         options: [
             {
@@ -481,7 +481,7 @@ export default [
         id: 10.2,
         title: "Vegas Baby",
         text: "You accelerate towards the figure, but instead of crashing into it, your car passes right through it. For a moment the figure is in the car with you, a living shadow with its hand on your heart. And then it’s gone, leaving no trace but the bad memory.",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_11.gif",
         // action: -10 gas
         options: [
             {
@@ -558,6 +558,7 @@ export default [
                 requiredState: (currentState) => currentState.bone,
                 // setState: { bone = false },
                 nextText: 12.3,
+
                 action: []
             }
         ]
