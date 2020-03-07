@@ -37,6 +37,7 @@ function Game() {
     // const [playerState, setPlayerState] = useState(playerProfile);
 
     const [storyState, setStoryState] = useState(GameStory[0]);
+    console.log(storyState.text)
 
 
     const fetchState = (nextText) => GameStory.filter(instance => nextText === instance.id)[0];
@@ -45,6 +46,12 @@ function Game() {
         let storyStatus = fetchState(nextText);
         setStoryState(storyStatus);
     }
+
+
+
+    // const storyShow = () => {
+
+    // }
 
     const removeItem = (name) => {
         if (playerState.inventory.length === 1) {
@@ -206,7 +213,8 @@ function Game() {
                     <Row>
                         <PlayerCol />
                         <GameCol actionMethod={actions}
-                            storyMethod={setStory} />
+                            storyMethod={setStory}
+                            storyState={setStoryState} />
                         <InventoryCol actionMethod={actions}
                             storyMethod={setStory}
                             removeItem={removeItem} />

@@ -58,8 +58,8 @@ export default [
             },
             {
                 text: "Would you like to purchase food for your travels?",
-                nextText: 2.1,
-                action: []
+                nextText: 3,
+                action: [9]
             },
             {
                 text: "No thanks I dont need any supplies, today.",
@@ -70,7 +70,7 @@ export default [
     },
     {
         id: 2.1,
-        title: "Introduction",
+        title: "Welcome to Old Pete's Caravan",
         text: "You start the engine, wave one last goodbye to Pete, and begin your journey eastward.",
         image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_2.gif",
         options: [
@@ -95,7 +95,7 @@ export default [
             {
                 text: "Keep Driving?",
                 nextText: 3.2,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -138,12 +138,12 @@ export default [
             {
                 text: "Swat the bee?",
                 nextText: 4.1,
-                action: []
+                action: [17]
             },
             {
                 text: "Let the Bee be",
                 nextText: 4.2,
-                action: []
+                action: [18]
             }
         ]
     },
@@ -185,7 +185,7 @@ export default [
             {
                 text: "Loot quickly and keep driving?",
                 nextText: 5.1,
-                action: []
+                action: [14, 24]
             },
             {
                 text: "Rest for the night?",
@@ -204,7 +204,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 6,
-                action: []
+                action: [20, 6]
             }
         ]
     },
@@ -231,7 +231,7 @@ export default [
             {
                 text: "Stop and collect rain?",
                 nextText: 6.1,
-                action: []
+                action: [12]
             },
             {
                 text: "Keep driving?",
@@ -276,12 +276,12 @@ export default [
             {
                 text: "Scavenge food?",
                 nextText: 7.1,
-                action: []
+                action: [10]
             },
             {
                 text: "Scavenge water?",
                 nextText: 7.2,
-                action: []
+                action: [17]
             }
         ]
     },
@@ -370,19 +370,19 @@ export default [
         image: "",
         options: [
             {
-                text: "Buy Quail?",
+                text: "Buy Food?",
                 nextText: 9,
-                action: []
+                action: [11, 25]
             },
             {
-                text: "Buy bullets?",
+                text: "Buy gun?",
                 nextText: 9,
-                action: []
+                action: [4, 30]
             },
             {
-                text: "Buy Water?",
+                text: "Buy medicine?",
                 nextText: 9,
-                action: []
+                action: [6, 28]
             }
         ]
     },
@@ -409,7 +409,7 @@ export default [
             {
                 text: "Stargaze?",
                 nextText: 9.1,
-                action: []
+                action: [15]
             },
             {
                 text: "Focus on the Road",
@@ -420,7 +420,7 @@ export default [
     },
     {
         id: 9.1,
-        title: "Vegas Baby",
+        title: "Stargazing",
         text: "You can’t describe it, but the sky feels wrong. As you dart your focus between the road and the stars, you can’t help but feel like they’re moving. As you focus on the sky, you sense something blink. The cosmos are all wrong, you decide it’s best not to look again.",
         image: "",
         // action: -10 health
@@ -434,7 +434,7 @@ export default [
     },
     {
         id: 9.2,
-        title: "Vegas Baby",
+        title: "Stargazing",
         text: "You keep your eyes on the road, even as a tiny voice enters your mind whispering “look…..look…….look”.",
         image: "",
         options: [
@@ -454,18 +454,18 @@ export default [
             {
                 text: "Swerve out of the way?",
                 nextText: 10.1,
-                action: []
+                action: [12]
             },
             {
                 text: "Ram it!",
                 nextText: 10.2,
-                action: []
+                action: [15]
             }
         ]
     },
     {
         id: 10.1,
-        title: "Vegas Baby",
+        title: "The Figure",
         text: "You swerve out of the way at the last minute, burning out offroad. You quickly course correct, but see no sign of the figure in your rearview mirrors.",
         image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_11.gif",
         // action: -5 gas
@@ -479,7 +479,7 @@ export default [
     },
     {
         id: 10.2,
-        title: "Vegas Baby",
+        title: "The Figure",
         text: "You accelerate towards the figure, but instead of crashing into it, your car passes right through it. For a moment the figure is in the car with you, a living shadow with its hand on your heart. And then it’s gone, leaving no trace but the bad memory.",
         image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_11.gif",
         // action: -10 gas
@@ -500,7 +500,7 @@ export default [
             {
                 text: "Pull off to investigate?",
                 nextText: 11.1,
-                action: []
+                action: [13, 11]
             },
             {
                 text: "Rollup window and press on?",
@@ -546,19 +546,19 @@ export default [
             {
                 text: "Spray the beast with the fire extinguisher?",
                 nextText: 12.1,
-                action: []
+                action: [17]
             },
             {
                 text: "Pummel the beast with the fire extinguisher?",
                 nextText: 12.2,
-                action: []
+                action: [15]
             },
             {
                 text: "Throw large bone to the Beast?",
-                requiredState: (currentState) => currentState.bone,
+                // requiredState: (currentState) => currentState.bone,
                 // setState: { bone = false },
                 nextText: 12.3,
-                action: []
+                action: [11]
             }
         ]
     },
@@ -645,7 +645,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 14,
-                action: []
+                action: [17]
             }
         ]
     },
@@ -689,12 +689,12 @@ export default [
             {
                 text: "Slam on the brakes?",
                 nextText: 15.1,
-                action: []
+                action: [17]
             },
             {
                 text: "Slam on the gas?",
                 nextText: 15.2,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -735,12 +735,12 @@ export default [
             {
                 text: "Loot the Trunk?",
                 nextText: 16.1,
-                action: []
+                action: [11, 21, 3]
             },
             {
                 text: "Siphon Gas from the Tank?",
                 nextText: 16.2,
-                action: []
+                action: [13]
             }
         ]
     },
@@ -781,12 +781,12 @@ export default [
             {
                 text: "Stop to investigate?",
                 nextText: 17.1,
-                action: []
+                action: [1]
             },
             {
                 text: "Nope! Keep Driving!",
                 nextText: 17.2,
-                action: []
+                action: [15]
             }
         ]
     },
@@ -827,7 +827,7 @@ export default [
             {
                 text: "Rob him?",
                 nextText: 18.1,
-                action: []
+                action: [9, 21, 15]
             },
             {
                 text: "Leave him be?",
@@ -837,7 +837,7 @@ export default [
             {
                 text: "Help him?",
                 nextText: 18.3,
-                action: []
+                action: [9, 13, 22]
             }
         ]
     },
@@ -891,7 +891,7 @@ export default [
             {
                 text: "Explore the darkness?",
                 nextText: 19.1,
-                action: []
+                action: [11, 17]
             },
             {
                 text: "Keep Driving?",
@@ -901,7 +901,7 @@ export default [
             {
                 text: "Use flashlight to explore?",
                 nextText: 19.3,
-                action: []
+                action: [9, 22]
             }
         ]
     },
@@ -975,19 +975,13 @@ export default [
             {
                 text: "Purchase Food?",
                 nextText: 21,
-                action: []
+                action: [9, 25]
             },
             {
                 text: "Purchase Fuel?",
                 nextText: 21,
                 // action: +10 fuel - 20 money
-                action: []
-            },
-            {
-                text: "Purchase Ammo?",
-                nextText: 21,
-                // action: +10 ammo - 30 money
-                action: []
+                action: [13, 28]
             }
         ]
     },
@@ -1014,13 +1008,13 @@ export default [
                 text: "Outrun the storm?",
                 nextText: 21.1,
                 // action: -5 food - 5 fuel
-                action: []
+                action: [8, 12]
             },
             {
                 text: "Take shelter?",
                 nextText: 21.2,
                 // action: - 10 food
-                action: []
+                action: [7]
             }
         ]
     },
@@ -1060,13 +1054,13 @@ export default [
                 text: "Allow health check?",
                 nextText: 22.1,
                 // action: -15 health - 15 food
-                action: []
+                action: [16, 7]
             },
             {
                 text: "Skip health check, floor it!",
                 nextText: 22.2,
                 // action: - 5 fuel
-                action: []
+                action: [12]
             }
         ]
     },
@@ -1106,13 +1100,13 @@ export default [
                 text: "Run Away?",
                 nextText: 23.1,
                 // action: - 5 health
-                action: []
+                action: [17]
             },
             {
                 text: "Fly Away?",
                 nextText: 23.2,
                 // action: + 5 health
-                action: []
+                action: [20]
             }
         ]
     },
@@ -1152,7 +1146,7 @@ export default [
                 text: "Try catching some on your tongue",
                 nextText: 24.1,
                 // action: -5 health
-                action: []
+                action: [17]
             },
             {
                 text: "Get back to the car",
@@ -1197,13 +1191,13 @@ export default [
                 text: "Keep driving",
                 nextText: 25.1,
                 // action: -10 health
-                action: []
+                action: [15]
             },
             {
                 text: "Make a run for it",
                 nextText: 25.2,
                 // action: - 5 health
-                action: []
+                action: [17]
             }
         ]
     },
