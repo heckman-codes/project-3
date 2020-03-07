@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 // import Test from "../../components/Modal"
 import "../Home/style.css"
-import ReactDOM from 'react-dom';
+// import { BrowserRouter as Route } from "react-router-dom";
+// import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
+import Signup from "../Home/Signup";
+// import HomeCol from "../../components/HomeCol";
+// import HomeRow from "../../components/HomeRow"
 
 const customStyles = {
     content: {
@@ -23,6 +27,11 @@ function Home() {
     }, []
     )
 
+    const [signUpIsOpen, setsignUpIsOpen] = React.useState(false);
+    function openSignup() {
+        setsignUpIsOpen(true);
+    }
+
     // var subtitle;
     const [modalIsOpen, setIsOpen] = React.useState(false);
     function openModal() {
@@ -38,13 +47,28 @@ function Home() {
         setIsOpen(false);
     }
 
-    function login() {
-        setIsOpen(true)
-        // ("modal-body-main").hide()
+    function login(event) {
+        // setIsOpen(true)
+        //     ("modal-body-main").empty()
+
+        // const target = event.target;
+        // const username = target.username;
+        // const password = target.password;
+        // const confirmPassword = target.confirmPassword;
+
+        // let userData = {
+        //     username: username,
+        //     password: password,
+        //     confirmPassword: confirmPassword
+        // };
+
+        // console.log(userData);
     }
 
     function signUp() {
-        setIsOpen(true)
+        // signUpOpen(true)
+
+
     }
 
     return (
@@ -71,7 +95,7 @@ function Home() {
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                <div className="modal-content">
+                {<div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title">Ready to Play?</h5>
                     </div>
@@ -80,9 +104,16 @@ function Home() {
                     </div>
                     <div className="modal-footer">
                         <button onClick={login} type="button" className="btn btn-primary">Login</button>
-                        <button onClick={signUp} type="button" className="btn btn-primary">Sign-Up</button>
+                        <button onClick={openSignup} type="button" className="btn btn-primary">Sign-Up</button>
                     </div>
-                </div>
+
+                    {signUpIsOpen ?
+                        <div>
+                            <Signup />
+                        </div> : null
+                    }
+
+                </div>}
             </Modal>
         </div>
     );
