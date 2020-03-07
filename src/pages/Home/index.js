@@ -12,6 +12,8 @@ const customStyles = {
         left: '50%',
         right: 'auto',
         bottom: 'auto',
+        width: '600px',
+        height: 'auto',
         marginRight: '-50%',
         padding: '0rem',
         transform: 'translate(-50%, -50%)',
@@ -26,17 +28,19 @@ function Home() {
     )
 
 
-    // var subtitle;
+    // Initial Modal View
     const [modalIsOpen, setIsOpen] = React.useState(false);
     function openModal() {
         setIsOpen(true);
     }
 
+    // Sign-Up Modal View (Replaces Current View with Form)
     const [signUpIsOpen, setsignUpIsOpen] = React.useState(false);
     function openSignup() {
         setsignUpIsOpen(true);
     }
 
+    // Login Modal View (Replaces Current View with Form)
     const [loginIsOpen, setLoginIsOpen] = React.useState(false);
     function openLogin() {
         setLoginIsOpen(true);
@@ -52,8 +56,7 @@ function Home() {
     }
 
     function login(event) {
-        // setIsOpen(true)
-        ("modal-body-main").empty()
+
         event.preventDefault();
         const target = event.target;
         const username = target.username;
@@ -70,9 +73,7 @@ function Home() {
     }
 
     function signUp(event) {
-        // signUpOpen(true)
 
-        ("modal-body-main").empty()
         event.preventDefault();
         const target = event.target;
         const username = target.username;
@@ -115,16 +116,18 @@ function Home() {
             >
                 {/* Initial Modal View */}
                 {!signUpIsOpen && !loginIsOpen ?
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title">Ready to Play?</h5>
-                        </div>
-                        <div className="modal-body-main">
-                            <p>Please Login Or Sign-Up!</p>
-                        </div>
-                        <div className="modal-footer">
-                            <button onClick={openLogin} type="button" className="btn btn-primary">Login</button>
-                            <button onClick={openSignup} type="button" className="btn btn-primary">Sign-Up</button>
+                    <div>
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title">Ready to Play?</h5>
+                            </div>
+                            <div className="modal-body-main">
+                                <p>Please Login Or Sign-Up!</p>
+                            </div>
+                            <div className="modal-footer">
+                                <button onClick={openLogin} type="button" className="btn btn-primary">Login</button>
+                                <button onClick={openSignup} type="button" className="btn btn-primary">Sign-Up</button>
+                            </div>
                         </div>
                     </div> : null
                 }
