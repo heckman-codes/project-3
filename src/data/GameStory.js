@@ -558,7 +558,6 @@ export default [
                 requiredState: (currentState) => currentState.bone,
                 // setState: { bone = false },
                 nextText: 12.3,
-
                 action: []
             }
         ]

@@ -21,7 +21,7 @@ function Game() {
     //playerProfile = player file that was retrieved
     //setPlayerState(playerProfile)
 
-    // for (let i =0; i <GameStory.length; i++){
+    // for (let i =0; i < GameStory.length; i++){
     //     if (playerProfile.state === GameStory[i].id){
     //         setStoryState(GameStory[i])
     //     }
