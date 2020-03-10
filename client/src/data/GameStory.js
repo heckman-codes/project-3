@@ -1,3 +1,5 @@
+// import inven from '../pages/Game';
+// import useableItems from '../data/useableItems';
 
 export default [
     {
@@ -133,7 +135,7 @@ export default [
         id: 4,
         title: "Bee",
         text: "On a relatively peaceful day of driving, a bee flies into the car. Even though you roll down all the windows, it refuses to leave the car. What do you do?",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_4.jpg",
         options: [
             {
                 text: "Swat the bee?",
@@ -151,7 +153,7 @@ export default [
         id: 4.1,
         title: "Bee",
         text: "With one hand on the wheel, you try and swat the bee away. In instinctively stings you. Ouch.",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_4.jpg",
         // action: 3
         // action 3 -5 health
         options: [
@@ -166,7 +168,7 @@ export default [
         id: 4.2,
         title: "Bee",
         text: "The bee comes to a rest on the dashboard. Eventually it flies away, but the company was nice for a moment.",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_4.jpg",
         // action: 4 +5 health
         options: [
             {
@@ -271,7 +273,7 @@ export default [
         id: 7,
         title: "Rest Stop",
         text: "You come across an old rest stop along the road. There might still be supplies in the vending machines. Or you could see if there’s any clean water in the lavatories.",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_7.jpg",
         options: [
             {
                 text: "Scavenge food?",
@@ -289,7 +291,7 @@ export default [
         id: 7.1,
         title: "Rest Stop",
         text: "You bust open the only untouched vending machine. Looks like somebody already took all the water and granola bars, but you find some stale mini donuts. So that’s fun.",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_7.jpg",
         // action: 8 + 4 food
         options: [
             {
@@ -303,7 +305,7 @@ export default [
         id: 7.2,
         title: "Rest Stop",
         text: "Oh god that was a mistake. Some time ago there stopped being people to clean the public restrooms and, oh no.",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_7.jpg",
         // action: 9 - 5 health
         options: [
             {
@@ -318,7 +320,7 @@ export default [
         id: 8,
         title: "Vegas Baby",
         text: "You drive past a collapsed sign, “WELCOME TO FABULOUS LAS VEGAS” but all that remains of the glitz and glamor is a massive, smoldering, hole. A few caravans line the circumference, this might be a good place to stock up on supplies.",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_8.jpg",
         options: [
             {
                 text: "Visit “LUCY’S GAMBLIN HOLE”",
@@ -341,7 +343,7 @@ export default [
         id: 8.1,
         title: "Vegas Baby",
         text: "'The spirit of Lady Luck is still alive, even if everybody else is dead. I’m going to throw this rock into the pit, if it lands red side up, you double your bet, if it lands black side up, I keep your money. What do you say?'",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_8.jpg",
         // action: 10 bet 5
         // action: 11 bet 10
         // action: 12 bet 25
@@ -367,7 +369,7 @@ export default [
         id: 8.2,
         title: "Vegas Baby",
         text: "CHRISTOPHER: 'I spelunk into the pit so you don’t have to, and pass the savings on to you! It’s the safe way!'",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_8.jpg",
         options: [
             {
                 text: "Buy Food?",
@@ -390,7 +392,7 @@ export default [
         id: 8.3,
         title: "Vegas Baby",
         text: "You leave Vegas behind you, setting out for the loneliest road stretch of the journey. The locals warn you, it might not be so lonely anymore.",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_8.jpg",
         options: [
             {
                 text: "Continue",
@@ -404,7 +406,7 @@ export default [
         id: 9,
         title: "Stargazing",
         text: "While driving across the dessert, the skies part for a moment. You can’t remember the last time you’ve seen the stars. You should focus on the road, but do you take time to look up?",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_9.jpg",
         options: [
             {
                 text: "Stargaze?",
@@ -422,7 +424,7 @@ export default [
         id: 9.1,
         title: "Stargazing",
         text: "You can’t describe it, but the sky feels wrong. As you dart your focus between the road and the stars, you can’t help but feel like they’re moving. As you focus on the sky, you sense something blink. The cosmos are all wrong, you decide it’s best not to look again.",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_9.jpg",
         // action: -10 health
         options: [
             {
@@ -436,7 +438,7 @@ export default [
         id: 9.2,
         title: "Stargazing",
         text: "You keep your eyes on the road, even as a tiny voice enters your mind whispering “look…..look…….look”.",
-        image: "",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_9.jpg",
         options: [
             {
                 text: "Continue",
@@ -555,8 +557,6 @@ export default [
             },
             {
                 text: "Throw large bone to the Beast?",
-                // requiredState: (currentState) => currentState.bone,
-                // setState: { bone = false },
                 nextText: 12.3,
                 action: [11]
             }
@@ -618,7 +618,7 @@ export default [
             {
                 text: "Give the car a good kick?",
                 nextText: 13.2,
-                action: []
+                action: [17]
             }
         ]
     },
@@ -645,7 +645,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 14,
-                action: [17]
+                action: []
             }
         ]
     },
@@ -1131,7 +1131,7 @@ export default [
         options: [
             {
                 text: "Continue",
-                nextText: 23,
+                nextText: 24,
                 action: []
             }
         ]
@@ -1227,5 +1227,66 @@ export default [
             }
         ]
     },
+    {
+        id: 26,
+        title: "Safe at Last",
+        text: "It's been a brutal journey. It's had its ups and downs but you have perservered. You've won",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_1.gif",
+        options: [
+            {
+                text: "Play Again?",
+                nextText: 1,
+                action: []
+
+            },
+            {
+                text: "Visit Old Pete's Shop.",
+                nextText: 1.2,
+                action: []
+            }
+        ]
+    },
+    {
+        id: 27,
+        title: "Succumbing to your injuries",
+        text: "Your wounds become too much to bear, your hands no longer able to grip the steering wheel. You come to a stop, step out of the car, and collapse. Another victim of the long way.",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_1.gif",
+        options: [
+            {
+                text: "Play Again?",
+                nextText: 1,
+                action: []
+
+            },
+        ]
+    },
+    {
+        id: 27.1,
+        title: "Can't get far by walking",
+        text: "The car sputters and jolts, you’ve taken it as far as it will go. You try to make the rest of the journey on foot, but you know you won’t make it. You collapse on the side of the road, another victim of the long way.",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_1.gif",
+        options: [
+            {
+                text: "Play Again?",
+                nextText: 1,
+                action: []
+
+            },
+        ]
+    },
+    {
+        id: 27.2,
+        title: "Death by Starvation",
+        text: "The car sputters and jolts, you’ve taken it as far as it will go. You try to make the rest of the journey on foot, but you know you won’t make it. You collapse on the side of the road, another victim of the long way.",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_1.gif",
+        options: [
+            {
+                text: "Play Again?",
+                nextText: 1,
+                action: []
+
+            },
+        ]
+    }
 
 ]
