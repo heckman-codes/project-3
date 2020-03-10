@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import HomeContainer from "../../components/HomeContainer";
-import HomeCol from "../../components/HomeCol";
-import HomeRow from "../../components/HomeRow";
+import HomeContainer from "../HomeContainer";
+import HomeCol from "../HomeCol";
+import HomeRow from "../HomeRow";
 import "../../pages/Home/style.css";
 
 const Login = (props) => {
