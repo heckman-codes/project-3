@@ -4,11 +4,11 @@ import PlayerContext from '../../utils/PlayerContext';
 
 
 function PlayerCol() {
-    const { hp, money, fuel, name, occupation, food } = useContext(PlayerContext);
+    const { hp, money, fuel, name, occupation, food, image } = useContext(PlayerContext);
     return (
         <div className="col s2 offset-s1 player-col center-align">
             <div className="player-pic-container">
-                <img alt="Profile" className="player-pic" src="https://project-3-arcade-game.s3-us-west-2.amazonaws.com/character-test.png" />
+                <img alt="Profile" className="player-pic" src={image} />
             </div>
             <div className="row">
                 <h1 id="player-name" style={{ marginTop: "20px" }}>{name}</h1>
