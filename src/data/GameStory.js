@@ -1131,7 +1131,7 @@ export default [
         options: [
             {
                 text: "Continue",
-                nextText: 23,
+                nextText: 24,
                 action: []
             }
         ]
@@ -1227,5 +1227,66 @@ export default [
             }
         ]
     },
+    {
+        id: 26,
+        title: "Safe at Last",
+        text: "It's been a brutal journey. It's had its ups and downs but you have perservered. You've won",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_1.gif",
+        options: [
+            {
+                text: "Play Again?",
+                nextText: 1,
+                action: []
+
+            },
+            {
+                text: "Visit Old Pete's Shop.",
+                nextText: 1.2,
+                action: []
+            }
+        ]
+    },
+    {
+        id: 27,
+        title: "Succumbing to your injuries",
+        text: "Your wounds become too much to bear, your hands no longer able to grip the steering wheel. You come to a stop, step out of the car, and collapse. Another victim of the long way.",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_1.gif",
+        options: [
+            {
+                text: "Play Again?",
+                nextText: 1,
+                action: []
+
+            },
+        ]
+    },
+    {
+        id: 27.1,
+        title: "Can't get far by walking",
+        text: "The car sputters and jolts, you’ve taken it as far as it will go. You try to make the rest of the journey on foot, but you know you won’t make it. You collapse on the side of the road, another victim of the long way.",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_1.gif",
+        options: [
+            {
+                text: "Play Again?",
+                nextText: 1,
+                action: []
+
+            },
+        ]
+    },
+    {
+        id: 27.2,
+        title: "Death by Starvation",
+        text: "The car sputters and jolts, you’ve taken it as far as it will go. You try to make the rest of the journey on foot, but you know you won’t make it. You collapse on the side of the road, another victim of the long way.",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_1.gif",
+        options: [
+            {
+                text: "Play Again?",
+                nextText: 1,
+                action: []
+
+            },
+        ]
+    }
 
 ]
