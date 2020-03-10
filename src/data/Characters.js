@@ -1,8 +1,8 @@
 const playableCharacters = [
     {
         player_id: undefined,
-        name: "Adam",
-        occupation: "Nuclear Scientist",
+        name: "Grizzly Adam",
+        occupation: "Mountain Man",
         image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/character-test.png",
         hp: 120,
         money: 80,
