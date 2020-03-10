@@ -8,11 +8,6 @@ import CharSelection from './pages/CharSelection';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import About from './pages/About';
 import Credits from './pages/Credits';
-// import Container from './components/Container';
-// import Row from './components/Row';
-// import PlayerCol from './components/PlayerCol';
-// import GameCol from './components/GameCol';
-// import InventoryCol from './components/InventoryCol';
 
 function App() {
   return (
