@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import "../Home/style.css"
+import "./style.css"
 
 import Modal from 'react-modal';
 import Signup from "../../components/SignUp";

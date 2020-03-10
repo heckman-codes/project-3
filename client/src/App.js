@@ -20,6 +20,10 @@ function App() {
           <Route exact path="/about" component={About} />
           <Route exact path="/credits" component={Credits} />
           <Route exact path="/characters" component={CharSelection} />
+
+          {/* GET/POST Routes?? */}
+          <Route path="/posts/:login" component={Home} />
+          <Route path="/posts/:signup" component={Home} />
         </Switch>
       </div>
     </Router>

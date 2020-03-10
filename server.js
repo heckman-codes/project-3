@@ -2,7 +2,7 @@ const express = require("express");
 
 const mongoose = require("mongoose");
 const routes = require("./routes");
-var db = require("./src/models");
+var db = require("./models");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
