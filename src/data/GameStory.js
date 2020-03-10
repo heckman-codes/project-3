@@ -618,7 +618,7 @@ export default [
             {
                 text: "Give the car a good kick?",
                 nextText: 13.2,
-                action: []
+                action: [17]
             }
         ]
     },
@@ -645,7 +645,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 14,
-                action: [17]
+                action: []
             }
         ]
     },
