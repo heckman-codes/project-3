@@ -9,6 +9,8 @@ import GameStory from '../../data/GameStory';
 import useableItems from '../../data/useableItems';
 import playableCharacters from '../../data/Characters';
 
+var invExport;
+
 function Game() {
 
     // The code below is intended to load the player's state from MongoDB and then set that as the view state.
@@ -47,11 +49,8 @@ function Game() {
         setStoryState(storyStatus);
     }
 
+    invExport = playerState.inventory
 
-
-    // const storyShow = () => {
-
-    // }
 
     const removeItem = (name) => {
         if (playerState.inventory.length === 1) {
@@ -68,9 +67,6 @@ function Game() {
             playerState.inventory.splice(name, 1);
         }
     }
-
-
-
 
     const actions = (actions) => {
         // console.log(actions);
@@ -200,7 +196,7 @@ function Game() {
             }
         }
         setPlayerState({ ...playerState, food: food, hp: health, inventory: inventoryArr, money: money, fuel: fuel, state: stateNum });
-        console.log({ playerState });
+        // console.log({ playerState });
 
 
     }
@@ -225,4 +221,7 @@ function Game() {
     );
 }
 
+
 export default Game;
+
+export var inven = invExport;
