@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import HomeContainer from "../../components/HomeContainer";
 import HomeCol from "../../components/HomeCol";
 import HomeRow from "../../components/HomeRow";
@@ -7,6 +7,42 @@ import "../../pages/Home/style.css";
 const Signup = (props) => {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
+
+    // const [formObject, setFormObject] = useState({})
+
+    // useEffect(() => {
+    //     addUser()
+    // }, [])
+
+
+    // function addUser() {
+    //     API.loadUser()
+    //         .then(res =>
+    //             setUsers(res.data)
+    //         )
+    //         .catch(err => console.log(err));
+    // };
+
+    // // Handles updating component state when the user types into the input field
+    // function handleInputChange(event) {
+    //     const { name, value } = event.target;
+    //     setFormObject({ ...formObject, [name]: value })
+    // };
+
+    // // When the form is submitted, use the API.saveBook method to save the book data
+    // // Then reload books from the database
+    // function handleFormSubmit(event) {
+    //     event.preventDefault();
+    //     if (formObject.name && formObject.password) {
+    //         API.saveUser({
+    //             name: formObject.name,
+    //             password: formObject.password
+    //         })
+    //             .then(res => loadUser())
+    //             .catch(err => console.log(err));
+    //     }
+    // };
+
 
     return (
         <div>
