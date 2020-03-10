@@ -12,11 +12,7 @@
     "react-modal": "^3.11.2",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
-<<<<<<< HEAD
-    "typewriter-effect": "^2.12.2"
-=======
     "react-typist": "^2.0.5"
->>>>>>> 7c56de9c5e0ea2796384e314afefacdb2535a4aa
   },
   "scripts": {
     "start": "react-scripts start",
