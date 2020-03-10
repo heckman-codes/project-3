@@ -30,6 +30,8 @@ const Credits = () => {
                     </div>
                     <div className="row">
                         <h4 className="credit-title">Special Thanks</h4>
+                        <p className="event-text" style={{ fontFamily: "Arcade" }}>Our Teachers, Marcelo Gachet and Alec Branaa</p>
+                        <p className="event-text" style={{ fontFamily: "Arcade" }}>Our TA's, Austin Shepard, Leah Weston, Justin Singh, and Haffed Ali</p>
                         <p className="event-text" style={{ fontFamily: "Arcade" }}>/r/PixelArt</p>
                         <p className="event-text" style={{ fontFamily: "Arcade" }}>Khaled "kldpxl"</p>
                     </div>

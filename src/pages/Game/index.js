@@ -9,6 +9,8 @@ import GameStory from '../../data/GameStory';
 import useableItems from '../../data/useableItems';
 import playableCharacters from '../../data/Characters';
 
+var invExport;
+
 function Game() {
 
     // The code below is intended to load the player's state from MongoDB and then set that as the view state.
@@ -40,18 +42,27 @@ function Game() {
     console.log(storyState.text)
 
 
+
     const fetchState = (nextText) => GameStory.filter(instance => nextText === instance.id)[0];
 
     const setStory = (nextText) => {
-        let storyStatus = fetchState(nextText);
-        setStoryState(storyStatus);
+        console.log(playerState);
+
+        if (playerState.hp <= 0) {
+            setStoryState(GameStory[40]);
+        } else if (playerState.fuel <= 0) {
+            console.log(playerState);
+            setStoryState(GameStory[41]);
+        } else if (playerState.food <= 0) {
+            setStoryState(GameStory[42]);
+        } else {
+            let storyStatus = fetchState(nextText);
+            setStoryState(storyStatus);
+        }
     }
 
+    // invExport = playerState.inventory
 
-
-    // const storyShow = () => {
-
-    // }
 
     const removeItem = (name) => {
         if (playerState.inventory.length === 1) {
@@ -69,9 +80,6 @@ function Game() {
         }
     }
 
-
-
-
     const actions = (actions) => {
         // console.log(actions);
         let health = playerState.hp;
@@ -81,6 +89,8 @@ function Game() {
         let inventoryArr = playerState.inventory;
         let stateNum = storyState.id;
         console.log(stateNum);
+
+
         for (let i = 0; i < actions.length; i++) {
             const action = actions[i];
 
@@ -133,6 +143,7 @@ function Game() {
                     break;
                 case 12:
                     fuel = fuel - 5;
+                    console.log(fuel);
                     break;
                 case 13:
                     fuel = fuel + 10;
@@ -199,8 +210,10 @@ function Game() {
                     break
             }
         }
+        // console.log(fuel);
+        // console.log(money);
         setPlayerState({ ...playerState, food: food, hp: health, inventory: inventoryArr, money: money, fuel: fuel, state: stateNum });
-        console.log({ playerState });
+        // console.log(playerState);
 
 
     }
@@ -225,4 +238,7 @@ function Game() {
     );
 }
 
+
 export default Game;
+
+export var inven = invExport;
