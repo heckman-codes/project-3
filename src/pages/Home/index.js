@@ -107,6 +107,8 @@ function Home() {
                     <h3 id="footer" className="white-text"> &copy; <span id="footerLogo">The Long Way</span></h3>
                 </footer>
             </div>
+
+            {/* Modal Functions are requirements to show individual forms */}
             <Modal
                 isOpen={modalIsOpen}
                 onAfterOpen={afterOpenModal}
@@ -145,10 +147,6 @@ function Home() {
                         <Login onSubmit={login} />
                     </div> : null
                 }
-
-
-
-
             </Modal>
         </div >
     );
