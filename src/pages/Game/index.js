@@ -11,6 +11,10 @@ import playableCharacters from '../../data/Characters';
 
 var invExport;
 
+// for (let i = 0; i < GameStory.length; i++) {
+//     console.log(i + " - " + GameStory[i].id)
+// }
+
 function Game() {
 
     // The code below is intended to load the player's state from MongoDB and then set that as the view state.
@@ -41,6 +45,8 @@ function Game() {
     const [storyState, setStoryState] = useState(GameStory[0]);
     console.log(storyState.text)
 
+    const resetPlayer = () => playableCharacters.filter(instance => playerState.name === instance.name)[0]
+
 
 
     const fetchState = (nextText) => GameStory.filter(instance => nextText === instance.id)[0];
@@ -49,12 +55,12 @@ function Game() {
         console.log(playerState);
 
         if (playerState.hp <= 0) {
-            setStoryState(GameStory[40]);
+            setStoryState(GameStory[78]);
         } else if (playerState.fuel <= 0) {
             console.log(playerState);
-            setStoryState(GameStory[41]);
+            setStoryState(GameStory[79]);
         } else if (playerState.food <= 0) {
-            setStoryState(GameStory[42]);
+            setStoryState(GameStory[80]);
         } else {
             let storyStatus = fetchState(nextText);
             setStoryState(storyStatus);
@@ -82,6 +88,7 @@ function Game() {
 
     const actions = (actions) => {
         // console.log(actions);
+        let player = playerState
         let health = playerState.hp;
         let food = playerState.food;
         let fuel = playerState.fuel;
@@ -214,6 +221,7 @@ function Game() {
         // console.log(money);
         setPlayerState({ ...playerState, food: food, hp: health, inventory: inventoryArr, money: money, fuel: fuel, state: stateNum });
         // console.log(playerState);
+        // console.log(resetPlayer(player.name));
 
 
     }
