@@ -40,10 +40,10 @@ const playableCharacters = [
         name: "Liam",
         occupation: "Con Artist",
         image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/character_liam.gif",
-        hp: 5,
+        hp: 40,
         money: 200,
-        fuel: 5,
-        food: 5,
+        fuel: 50,
+        food: 50,
         state: 0,
         inventory: []
     },

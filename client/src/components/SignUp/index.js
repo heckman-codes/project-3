@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from 'axios';
 import HomeContainer from "../HomeContainer";
 import HomeCol from "../HomeCol";
 import HomeRow from "../HomeRow";
@@ -8,6 +9,7 @@ const Signup = (props) => {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
+<<<<<<< HEAD
     // const [formObject, setFormObject] = useState({})
 
     // useEffect(() => {
@@ -43,6 +45,12 @@ const Signup = (props) => {
     //     }
     // };
 
+=======
+    // function for calling axios
+    function signUp() {
+
+    }
+>>>>>>> 79c7a15583988e23f4aca6d244cac8cbd8740fc6
 
     return (
         <div>
@@ -89,7 +97,7 @@ const Signup = (props) => {
                         </HomeCol>
                     </HomeRow>
 
-                    <button className="btn btn-success" type="submit" id="signUpBtn">
+                    <button onClick={signUp} className="btn btn-success" type="submit" id="signUpBtn">
                         Sign Up
                     </button>
                 </HomeContainer>
