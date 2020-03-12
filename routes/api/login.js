@@ -1,13 +1,9 @@
 const router = require('express').Router();
 const usersController = require('../../controllers/userController');
 
-router
-    .route('/')
-    .get(usersController.create);
-
 // Login should only get, put, delete
 router
-    .route('/:login')
+    .route('/login')
     .get(usersController.findById)
     .put(usersController.update)
     .post(usersController.create)
