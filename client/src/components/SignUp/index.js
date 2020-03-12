@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from 'axios';
 import HomeContainer from "../HomeContainer";
 import HomeCol from "../HomeCol";
 import HomeRow from "../HomeRow";
@@ -7,6 +8,11 @@ import "../../pages/Home/style.css";
 const Signup = (props) => {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
+
+    // function for calling axios
+    function signUp() {
+
+    }
 
     return (
         <div>
@@ -53,7 +59,7 @@ const Signup = (props) => {
                         </HomeCol>
                     </HomeRow>
 
-                    <button className="btn btn-success" type="submit" id="signUpBtn">
+                    <button onClick={signUp} className="btn btn-success" type="submit" id="signUpBtn">
                         Sign Up
                     </button>
                 </HomeContainer>

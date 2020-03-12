@@ -44,7 +44,7 @@ function Game() {
 
 
     const fetchState = (nextText) => GameStory.filter(instance => nextText === instance.id)[0];
-
+    // game state
     const setStory = (nextText) => {
         console.log(playerState);
 
