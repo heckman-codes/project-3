@@ -45,48 +45,14 @@ function Game() {
     const [storyState, setStoryState] = useState(GameStory[0]);
     console.log(storyState.text)
 
-    const resetPlayer = () => playableCharacters.filter(instance => playerState.name === instance.name)[0]
-
+    // const getProgress = (state_id) => {
+    //     let progressPercent = 0;
+    //     progressPercent = Math.round(GameStory.length / GameStory.indexOf(state_id));
+    //     console.log(progressPercent);
+    //     return progressPercent;
+    // }
 
     const fetchState = (nextText) => GameStory.filter(instance => nextText === instance.id)[0];
-    // game state
-    const setStory = (nextText) => {
-        console.log(playerState);
-
-        // const setStory = (nextText) => {
-        //     console.log(playerState);
-
-        //     if (playerState.hp <= 0) {
-        //         setStoryState(GameStory[78]);
-        //     } else if (playerState.fuel <= 0) {
-        //         console.log(playerState);
-        //         setStoryState(GameStory[79]);
-        //     } else if (playerState.food <= 0) {
-        //         setStoryState(GameStory[80]);
-        //     } else {
-        //         let storyStatus = fetchState(nextText);
-        //         setStoryState(storyStatus);
-        //     }
-        // }
-
-        // invExport = playerState.inventory
-
-    }
-    const removeItem = (name) => {
-        if (playerState.inventory.length === 1) {
-            playerState.inventory = [];
-        } else {
-            // for (var i = 0; i < playerState.inventory.length; i++) {
-            //     var obj = playerState.inventory[i];
-
-            //     if (listToDelete.indexOf(obj.id) !== -1) {
-            //         playerState.inventory.splice(i, 1);
-            //         i--;
-            //     }
-            // }
-            playerState.inventory.splice(name, 1);
-        }
-    }
 
     const actions = (actions, nextText) => {
         // console.log(actions);
@@ -216,7 +182,29 @@ function Game() {
                     break;
                 case 33:
                     player = playableCharacters.filter(character => character.name === playerState.name)[0];
-                    console.log(player);
+                    health = player.hp
+                    money = player.money
+                    food = player.food
+                    fuel = player.fuel
+                    inventoryArr = []
+                    break;
+                case 34:
+                    inventoryArr.splice(inventoryArr.map((x) => x.item_id).indexOf(0), 1)
+                    break;
+                case 35:
+                    inventoryArr.splice(inventoryArr.map((x) => x.item_id).indexOf(1), 1)
+                    break;
+                case 36:
+                    inventoryArr.splice(inventoryArr.map((x) => x.item_id).indexOf(2), 1)
+                    break;
+                case 37:
+                    inventoryArr.splice(inventoryArr.map((x) => x.item_id).indexOf(3), 1)
+                    break;
+                case 38:
+                    inventoryArr.splice(inventoryArr.map((x) => x.item_id).indexOf(4), 1)
+                    break;
+                case 39:
+                    inventoryArr.splice(inventoryArr.map((x) => x.item_id).indexOf(5), 1)
                     break;
                 default:
                     break
@@ -225,16 +213,16 @@ function Game() {
         // console.log(fuel);
         // console.log(money);
         if (health <= 0) {
-            setPlayerState(player);
+            setPlayerState({ ...playerState, food: food, hp: health, inventory: inventoryArr, money: money, fuel: fuel, state: stateNum });
             setStoryState(GameStory[78]);
             return;
         } else if (fuel <= 0) {
             console.log(player)
-            setPlayerState(player);
+            setPlayerState({ ...playerState, food: food, hp: health, inventory: inventoryArr, money: money, fuel: fuel, state: stateNum });
             setStoryState(GameStory[79]);
             return;
         } else if (food <= 0) {
-            setPlayerState(player);
+            setPlayerState({ ...playerState, food: food, hp: health, inventory: inventoryArr, money: money, fuel: fuel, state: stateNum });
             setStoryState(GameStory[80]);
             return;
         } else {
@@ -254,8 +242,7 @@ function Game() {
                         <PlayerCol />
                         <GameCol actionMethod={actions}
                             storyState={setStoryState} />
-                        <InventoryCol actionMethod={actions}
-                            removeItem={removeItem} />
+                        <InventoryCol actionMethod={actions} />
                     </Row>
                 </PlayerContext.Provider>
             </StoryContext.Provider>
