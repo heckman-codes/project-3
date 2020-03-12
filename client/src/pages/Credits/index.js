@@ -17,11 +17,11 @@ const Credits = () => {
                         <p className="event-text" style={{ fontFamily: "Arcade" }}>Caitlan Jeffrey</p>
                     </div>
                     <div className="row">
-                        <h4 className="credit-title">Front End + Writing</h4>
+                        <h4 className="credit-title">Front End + Writing + Asset Creation</h4>
                         <p className="event-text" style={{ fontFamily: "Arcade" }}>Kevin Adamski</p>
                     </div>
                     <div className="row">
-                        <h4 className="credit-title">Front End + Asset Creation</h4>
+                        <h4 className="credit-title">Front End + UI + Asset Creation</h4>
                         <p className="event-text" style={{ fontFamily: "Arcade" }}>Liam Heckman</p>
                     </div>
                     <div className="row">
