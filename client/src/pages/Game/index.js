@@ -51,21 +51,21 @@ function Game() {
 
     const fetchState = (nextText) => GameStory.filter(instance => nextText === instance.id)[0];
 
-    const setStory = (nextText) => {
-        console.log(playerState);
+    // const setStory = (nextText) => {
+    //     console.log(playerState);
 
-        if (playerState.hp <= 0) {
-            setStoryState(GameStory[78]);
-        } else if (playerState.fuel <= 0) {
-            console.log(playerState);
-            setStoryState(GameStory[79]);
-        } else if (playerState.food <= 0) {
-            setStoryState(GameStory[80]);
-        } else {
-            let storyStatus = fetchState(nextText);
-            setStoryState(storyStatus);
-        }
-    }
+    //     if (playerState.hp <= 0) {
+    //         setStoryState(GameStory[78]);
+    //     } else if (playerState.fuel <= 0) {
+    //         console.log(playerState);
+    //         setStoryState(GameStory[79]);
+    //     } else if (playerState.food <= 0) {
+    //         setStoryState(GameStory[80]);
+    //     } else {
+    //         let storyStatus = fetchState(nextText);
+    //         setStoryState(storyStatus);
+    //     }
+    // }
 
     // invExport = playerState.inventory
 
@@ -86,7 +86,7 @@ function Game() {
         }
     }
 
-    const actions = (actions) => {
+    const actions = (actions, nextText) => {
         // console.log(actions);
         let player = playerState
         let health = playerState.hp;
@@ -212,17 +212,34 @@ function Game() {
                 case 32:
                     fuel = fuel + 15;
                     break;
-
+                case 33:
+                    player = playableCharacters.filter(character => character.name === playerState.name)[0];
+                    console.log(player);
+                    break;
                 default:
                     break
             }
         }
         // console.log(fuel);
         // console.log(money);
+        if (health <= 0) {
+            setPlayerState(player);
+            setStoryState(GameStory[78]);
+            return;
+        } else if (fuel <= 0) {
+            console.log(player)
+            setPlayerState(player);
+            setStoryState(GameStory[79]);
+            return;
+        } else if (food <= 0) {
+            setPlayerState(player);
+            setStoryState(GameStory[80]);
+            return;
+        } else {
+            let storyStatus = fetchState(nextText);
+            setStoryState(storyStatus);
+        }
         setPlayerState({ ...playerState, food: food, hp: health, inventory: inventoryArr, money: money, fuel: fuel, state: stateNum });
-        // console.log(playerState);
-        // console.log(resetPlayer(player.name));
-
 
     }
 
@@ -234,10 +251,8 @@ function Game() {
                     <Row>
                         <PlayerCol />
                         <GameCol actionMethod={actions}
-                            storyMethod={setStory}
                             storyState={setStoryState} />
                         <InventoryCol actionMethod={actions}
-                            storyMethod={setStory}
                             removeItem={removeItem} />
                     </Row>
                 </PlayerContext.Provider>
