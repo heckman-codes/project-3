@@ -1,13 +1,11 @@
 import axios from "axios";
 
 export default {
-    // Gets all Users
-    getLogins: function () {
-        return axios.get("/api/login");
-    },
+
     // Gets the Users with the given id
-    getLogin: function (id) {
-        return axios.get("/api/login" + id);
+    getLogin: function (user) {
+        console.log(user);
+        return axios.get("/api/login/", user);
     },
     // Deletes the User with the given id
     deleteLogin: function (id) {
