@@ -3,7 +3,7 @@ const usersController = require('../../controllers/userController');
 
 // Login should only get, put, delete
 router
-    .route('/login')
+    .route('/signup')
     .get(usersController.findById)
     .put(usersController.update)
     .post(usersController.create)

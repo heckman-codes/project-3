@@ -1,14 +1,41 @@
 import React, { useState } from "react";
+import { useHistory, useParams } from "react-router-dom";
+import API from "../../utils/API"
 import HomeContainer from "../HomeContainer";
 import HomeCol from "../HomeCol";
 import HomeRow from "../HomeRow";
 import "../../pages/Home/style.css";
 
-import axios from 'axios';
-
 const Login = (props) => {
-    const [username, setUsername] = useState();
-    const [password, setPassword] = useState();
+
+    const [formObject, setFormObject] = useState({
+        username: "",
+        password: ""
+    })
+
+    const history = useHistory();
+
+
+    // Handles updating component state when the user types into the input field
+    function handleInputChange(event) {
+        const { name, value } = event.target;
+        setFormObject({ ...formObject, [name]: value })
+    };
+
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        if (formObject.username && formObject.password) {
+            console.log(formObject)
+            API.getLogin(formObject)
+
+                // insert play game history thing here...
+                .then(res => history.push("/game"))
+                .catch(err => console.log(err));
+        }
+        else (
+            console.log("You failed to Login!")
+        )
+    };
 
     return (
         <div>
@@ -24,7 +51,8 @@ const Login = (props) => {
                                 type="text"
                                 placeholder="Username"
                                 name="username"
-                                onChange={e => setUsername(e.target.value)}
+                                value={formObject.username}
+                                onChange={handleInputChange}
                             />
                         </HomeCol>
                     </HomeRow>
@@ -35,13 +63,13 @@ const Login = (props) => {
                                 type="password"
                                 placeholder="Password"
                                 name="password"
-                                value={password}
-                                onChange={e => setPassword(e.target.value)}
+                                value={formObject.password}
+                                onChange={handleInputChange}
                             />
                         </HomeCol>
                     </HomeRow>
 
-                    <button className="btn btn-success" type="submit">
+                    <button onClick={handleFormSubmit} className="btn btn-success" type="submit">
                         Login
                     </button>
                 </HomeContainer>

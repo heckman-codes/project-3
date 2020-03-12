@@ -1,13 +1,9 @@
 const path = require('path');
 const router = require('express').Router();
-const apiRoutes = require('./api');
 const loginRoutes = require('./api/login')
+const signupRoutes = require('./api/signup')
 
-router.use("/api/login", loginRoutes)
-router.use('/api', apiRoutes);
-
-// router.use("/", function (req, res) {
-//     res.sendFile(path.join(__dirname, "client/public/index.html"))
-// })
+router.use("/api", loginRoutes)
+router.use("/api", signupRoutes)
 
 module.exports = router

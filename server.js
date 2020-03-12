@@ -1,5 +1,6 @@
-const express = require("express");
+require('dotenv').config;
 
+const express = require("express");
 const path = require("path")
 const mongoose = require("mongoose");
 const routes = require("./routes");
@@ -23,17 +24,17 @@ app.use(cookieParser());
 // Add routes, both API and view
 
 
-app.use((req, res, next) => {
-  const token = req.cookies.token;
+// app.use((req, res, next) => {
+//   const token = req.cookies.token;
 
-  if (token) {
-    const { id } = jwt.verify(token, process.env.APP_SECRET);
+//   if (token) {
+//     const { id } = jwt.verify(token, process.env.APP_SECRET);
 
-    req.user = id;
-  }
+//     req.user = id;
+//   }
 
-  next();
-});
+//   next();
+// });
 app.use(routes);
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/thelongway");
