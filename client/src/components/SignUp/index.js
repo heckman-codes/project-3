@@ -7,8 +7,7 @@ import HomeRow from "../HomeRow";
 import "../../pages/Home/style.css";
 
 const Signup = (props) => {
-    // const [username, setUsername] = useState();
-    // const [password, setPassword] = useState();
+
     const [formObject, setFormObject] = useState({
         username: "",
         password: "",
@@ -33,7 +32,7 @@ const Signup = (props) => {
                 .catch(err => console.log(err));
         }
         else (
-            console.log("You failed.")
+            console.log("You failed to Sign-Up.")
         )
     };
 
