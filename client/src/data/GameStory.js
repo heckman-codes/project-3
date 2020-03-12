@@ -9,6 +9,7 @@ export default [
             "It’s been five years since the cataclysm. You’ve been etching out a living in what remains of Sacramento. The landscape of skyscrapers and towering structures had been reduced to smoldering piles of rubble from the near daily earthquakes. You’ve scraped by on supplies from various looting runs, but everything seems to be running out. The time to journey east is now. You’ve been modifying an old ford to make the journey, welding on armor and siphoning what gas you can. Before the signal died out last year, you picked up a radio signal repeating the message “Washington D.C. is the last remaining safe zone. For anyone listening, if you can make it here, we can help you.” You could hit the road now, or make one last stop at old Pete’s and buy additional supplies.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_1.gif",
+        progress: 0,
         options: [
             {
                 text: "Leave without visiting the shop.",
@@ -29,6 +30,7 @@ export default [
             "You never were good at goodbyes, and Pete’s scavenging skills are as faded as his memory these days. You rev up the engine and begining your journey across US 50.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_1.gif",
+        progress: 0,
         options: [
             {
                 text: "Continue",
@@ -44,6 +46,7 @@ export default [
             "You decide to visit old Pete one last time and see what he has that might be useful for the long journey.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_1.gif",
+        progress: 0,
         options: [
             {
                 text: "Continue",
@@ -59,16 +62,17 @@ export default [
             "You enter old Pete’s mobile home, greeted by a familiar but still overwhelming stench. Pete had a way of scavenging and crafting useful supplies, and was one of the few folks out there still accepting paper currency. ‘I still don’t see why you believe in that safezone nonsense,’a gruff voice bellows out from behind his scruffy moustache. But I guess this is goodbye then. Better stock up before you go, anything here you lookin to buy?.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_2.gif",
+        progress: 4,
         options: [
             {
-                text: "Would you like to purchase an axe?",
+                text: "Would you like to purchase an axe?(20)",
                 nextText: 2.1,
-                action: [1]
+                action: [1, 28]
             },
             {
-                text: "Would you like to purchase food for your travels?",
+                text: "Would you like to purchase food for your travels?(10)",
                 nextText: 3,
-                action: [9]
+                action: [9, 26]
             },
             {
                 text: "No thanks I dont need any supplies, today.",
@@ -84,11 +88,12 @@ export default [
             "You start the engine, wave one last goodbye to Pete, and begin your journey eastward.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_2.gif",
+        progress: 4,
         options: [
             {
                 text: "Continue",
                 nextText: 3,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -99,6 +104,7 @@ export default [
             "CRRRRUNCH. A sickening crunch echoes under the wheels of your vehicle. Whatever it was may have damaged the chassis. Do you stop and examine or keep driving?.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_3.gif",
+        progress: 8,
         options: [
             {
                 text: "Stop and examine?",
@@ -119,13 +125,14 @@ export default [
             "You stop the car and shine a light under the body. There’s nothing along the lines of viscera under the car, but you do unwedge a disturbingly long fragment of bone from the axel.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_3-1.gif",
+        progress: 8,
         // action: 1,
         // action 1 + bone
         options: [
             {
                 text: "Continue",
                 nextText: 4,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -136,13 +143,14 @@ export default [
             "It’s dangerous to stop here, and given the length of the journey you’re sure plenty of things will end up flattened by your tires. Still, every now and then an uncomfortable jolt bumps up from below.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_3-1.gif",
+        progress: 8,
         // action: 2,
         // "action 2 -5 fuel"
         options: [
             {
                 text: "Continue",
                 nextText: 4,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -153,6 +161,7 @@ export default [
             "On a relatively peaceful day of driving, a bee flies into the car. Even though you roll down all the windows, it refuses to leave the car. What do you do?",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_4.jpg",
+        progress: 12,
         options: [
             {
                 text: "Swat the bee?",
@@ -173,13 +182,14 @@ export default [
             "With one hand on the wheel, you try and swat the bee away. In instinctively stings you. Ouch.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_4.jpg",
+        progress: 12,
         // action: 3
         // action 3 -5 health
         options: [
             {
                 text: "Continue",
                 nextText: 5,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -190,12 +200,13 @@ export default [
             "The bee comes to a rest on the dashboard. Eventually it flies away, but the company was nice for a moment.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_4.jpg",
+        progress: 12,
         // action: 4 +5 health
         options: [
             {
                 text: "Continue",
                 nextText: 5,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -206,6 +217,7 @@ export default [
             "While driving, you come across a small roadside town. By the looks of it, the place is totally abandoned",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_5.gif",
+        progress: 16,
         options: [
             {
                 text: "Loot quickly and keep driving?",
@@ -215,7 +227,7 @@ export default [
             {
                 text: "Rest for the night?",
                 nextText: 5.2,
-                action: []
+                action: [20, 6]
             }
         ]
     },
@@ -226,12 +238,13 @@ export default [
             "You mange to find a few necessities, but the place has been picked clean.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_5.gif",
+        progress: 16,
         // action: 5 +5 money, + 3 gas
         options: [
             {
                 text: "Continue",
                 nextText: 6,
-                action: [20, 6]
+                action: [12]
             }
         ]
     },
@@ -242,12 +255,13 @@ export default [
             "You barricade yourself inside one of the houses for the night. It feels good to sleep somewhere other than the car. You mange to find some useful medicine as well",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_5.gif",
+        progress: 16,
         // action: 6 +5 health, + Medicine
         options: [
             {
                 text: "Continue",
                 nextText: 6,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -258,6 +272,7 @@ export default [
             "A heavy rain begins to pour. The rain looks peculiar, almost thicker than normal. Still, it might be good to stop and refresh your water supply.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_6.gif",
+        progress: 20,
         options: [
             {
                 text: "Stop and collect rain?",
@@ -278,12 +293,13 @@ export default [
             "You stop for a while and collect rain water. However, as you observe in the container, it starts to wiggle on its own. You dump out what you’ve collect and lost a days worth of travel.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_6.gif",
+        progress: 20,
         // action: 7 -5 gas
         options: [
             {
                 text: "Continue",
                 nextText: 7,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -294,11 +310,12 @@ export default [
             "You turn on the windshield wipers and speed ahead, the rain sticking more than it should.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_6.gif",
+        progress: 20,
         options: [
             {
                 text: "Continue",
                 nextText: 7,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -309,6 +326,7 @@ export default [
             "You come across an old rest stop along the road. There might still be supplies in the vending machines. Or you could see if there’s any clean water in the lavatories.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_7.jpg",
+        progress: 24,
         options: [
             {
                 text: "Scavenge food?",
@@ -329,12 +347,13 @@ export default [
             "You bust open the only untouched vending machine. Looks like somebody already took all the water and granola bars, but you find some stale mini donuts. So that’s fun.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_7.jpg",
+        progress: 24,
         // action: 8 + 4 food
         options: [
             {
                 text: "Continue",
                 nextText: 8,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -345,12 +364,13 @@ export default [
             "Oh god that was a mistake. Some time ago there stopped being people to clean the public restrooms and, oh no.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_7.jpg",
+        progress: 24,
         // action: 9 - 5 health
         options: [
             {
                 text: "Continue",
                 nextText: 8,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -362,6 +382,7 @@ export default [
             "You drive past a collapsed sign, “WELCOME TO FABULOUS LAS VEGAS” but all that remains of the glitz and glamor is a massive, smoldering, hole. A few caravans line the circumference, this might be a good place to stock up on supplies.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_8.jpg",
+        progress: 28,
         options: [
             {
                 text: "Visit “LUCY’S GAMBLIN HOLE”",
@@ -387,24 +408,25 @@ export default [
             "'The spirit of Lady Luck is still alive, even if everybody else is dead. I’m going to throw this rock into the pit, if it lands red side up, you double your bet, if it lands black side up, I keep your money. What do you say?'",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_8.jpg",
+        progress: 28,
         // action: 10 bet 5
         // action: 11 bet 10
         // action: 12 bet 25
         options: [
             {
                 text: "Bet 5?",
-                nextText: 9,
-                action: []
+                nextText: 8.4,
+                action: [25]
             },
             {
                 text: "Bet 10?",
-                nextText: 9,
-                action: []
+                nextText: 8.4,
+                action: [26]
             },
             {
                 text: "Bet 25?",
-                nextText: 9,
-                action: []
+                nextText: 8.4,
+                action: [29]
             }
         ]
     },
@@ -415,6 +437,7 @@ export default [
             "CHRISTOPHER: 'I spelunk into the pit so you don’t have to, and pass the savings on to you! It’s the safe way!'",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_8.jpg",
+        progress: 28,
         options: [
             {
                 text: "Buy Food?",
@@ -422,9 +445,9 @@ export default [
                 action: [11, 25]
             },
             {
-                text: "Buy gun?",
+                text: "Buy Fuel?",
                 nextText: 9,
-                action: [4, 30]
+                action: [13, 26]
             },
             {
                 text: "Buy medicine?",
@@ -440,11 +463,28 @@ export default [
             "You leave Vegas behind you, setting out for the loneliest road stretch of the journey. The locals warn you, it might not be so lonely anymore.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_8.jpg",
+        progress: 28,
         options: [
             {
                 text: "Continue",
                 nextText: 9,
-                action: []
+                action: [12]
+            }
+        ]
+    },
+    {
+        id: 8.4,
+        title: "Vegas Baby",
+        text:
+            "You hurl the rock into the pit, it bounces off a light post and lands BLACK SIDE Up. LUCY: “Looks like Lady Luck wasn’t on your side today.”",
+        image:
+            "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_8.jpg",
+        progress: 28,
+        options: [
+            {
+                text: "Continue",
+                nextText: 9,
+                action: [12]
             }
         ]
     },
@@ -456,6 +496,7 @@ export default [
             "While driving across the dessert, the skies part for a moment. You can’t remember the last time you’ve seen the stars. You should focus on the road, but do you take time to look up?",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_9.jpg",
+        progress: 32,
         options: [
             {
                 text: "Stargaze?",
@@ -476,12 +517,13 @@ export default [
             "You can’t describe it, but the sky feels wrong. As you dart your focus between the road and the stars, you can’t help but feel like they’re moving. As you focus on the sky, you sense something blink. The cosmos are all wrong, you decide it’s best not to look again.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_9.jpg",
+        progress: 32,
         // action: -10 health
         options: [
             {
                 text: "Continue",
                 nextText: 10,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -492,11 +534,12 @@ export default [
             "You keep your eyes on the road, even as a tiny voice enters your mind whispering “look…..look…….look”.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_9.jpg",
+        progress: 32,
         options: [
             {
                 text: "Continue",
                 nextText: 10,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -507,6 +550,7 @@ export default [
             "Driving late at night, your headlights begin to flicker. Suddenly, you notice a shadowy, humanoid figure standing in the middle of the road. It’s too late to stop.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_10.gif",
+        progress: 36,
         options: [
             {
                 text: "Swerve out of the way?",
@@ -527,12 +571,13 @@ export default [
             "You swerve out of the way at the last minute, burning out offroad. You quickly course correct, but see no sign of the figure in your rearview mirrors.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_11.gif",
+        progress: 36,
         // action: -5 gas
         options: [
             {
                 text: "Continue",
                 nextText: 11,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -543,12 +588,13 @@ export default [
             "You accelerate towards the figure, but instead of crashing into it, your car passes right through it. For a moment the figure is in the car with you, a living shadow with its hand on your heart. And then it’s gone, leaving no trace but the bad memory.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_11.gif",
+        progress: 36,
         // action: -10 gas
         options: [
             {
                 text: "Continue",
                 nextText: 11,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -559,6 +605,7 @@ export default [
             "While driving across the desert, windows down, the quiet of the night is interrupted by the twangs of rock music. You see a light offroad, if you turn off now, you can find the source of the music.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_11.jpg",
+        progress: 40,
         options: [
             {
                 text: "Pull off to investigate?",
@@ -568,7 +615,7 @@ export default [
             {
                 text: "Rollup window and press on?",
                 nextText: 11.1,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -579,12 +626,13 @@ export default [
             "You turn off the road, following the source of the music. You find a small shack with a rickety broadcast tower. Inside you meet a friendly old man playing old records. He gives you food and fuel to help you on your journey.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_11.jpg",
+        progress: 40,
         // action: +10 gas, + 5 food
         options: [
             {
                 text: "Continue",
                 nextText: 12,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -595,12 +643,13 @@ export default [
             "The desert’s done nothing but play tricks on your, there’s no reason to start trusting it now",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_11.jpg",
+        progress: 40,
         // action: +10 gas, + 5 food
         options: [
             {
                 text: "Continue",
                 nextText: 12,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -611,6 +660,7 @@ export default [
             "While looting inside an abandoned gas station, you realize you aren’t alone. A beastly hound blocks the exit, gnarling its three rows of bloodstained teeth. The only thing that might help is a hefty fire extinguisher nearby.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_12.gif",
+        progress: 44,
         options: [
             {
                 text: "Spray the beast with the fire extinguisher?",
@@ -636,12 +686,13 @@ export default [
             "A frothy foam spews out from the extinguisher, blinding the beast. You run past it, barely keeping your balance over the foam. By the time you get back to your car, you realize it managed to deeply scratch you.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_12.gif",
+        progress: 44,
         // action: - 5 heatlh
         options: [
             {
                 text: "Continue",
                 nextText: 13,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -652,12 +703,13 @@ export default [
             "You lift the heft of the extinguisher overhead and try to bring it down onto the beast. It dodges out of the way, biting you in the leg. You manage to get a solid hit on it, leaving it stunned enough for you to make it to the car.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_12.gif",
+        progress: 44,
         // action: - 10 heatlh
         options: [
             {
                 text: "Continue",
                 nextText: 13,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -668,12 +720,13 @@ export default [
             "You throw the large bone, and the beast instinctively chases it. Your path is clear as it ravenously gnaws at the bone. You manage to grab a handful of supplies as you sneak your way out.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_12.gif",
+        progress: 44,
         // action: + 5 food
         options: [
             {
                 text: "Continue",
                 nextText: 13,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -684,6 +737,7 @@ export default [
             "While driving, the check engine light turns on. You know it’s not a good idea to keep driving with this thing on.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_13.jpg",
+        progress: 48,
         options: [
             {
                 text: "Carefully inspect under the hood",
@@ -704,11 +758,12 @@ export default [
             "You take a look under the hood. Looks like the issue is thankfully just a loosefuel cap. You solve the issue and keep driving.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_13.jpg",
+        progress: 48,
         options: [
             {
                 text: "Continue",
                 nextText: 14,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -719,12 +774,13 @@ export default [
             "You attempt the old concussive force method of problem solving. You give the car a solid kick, painfully crunching your toes. The light flicks off, but this is going to hurt for a while.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_13.jpg",
+        progress: 48,
         // action: - 5 health
         options: [
             {
                 text: "Continue",
                 nextText: 14,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -735,6 +791,7 @@ export default [
             "You arrive at Twilight Park, a settlement that rose up in the remains of a once thriving amusement park. The roller coaster’s wooden tracks have totally decayed in some places, and the ferris wheel lies collapsed in the algae infested man-made lake, but the locals have carved out a home here.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_14.webp",
+        progress: 52,
         options: [
             {
                 text: "Visit the Fun Store?",
@@ -755,11 +812,12 @@ export default [
             "Shopkeep: “Many travellers have ended their journey here, deciding to live out there days in Twilight Park. We well what they no longer need.”",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_14.webp",
+        progress: 52,
         options: [
             {
                 text: "Continue",
                 nextText: 15,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -769,6 +827,7 @@ export default [
         text: "While driving, a massive fissure erupts across the road ahead.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_15.jpg",
+        progress: 56,
         options: [
             {
                 text: "Slam on the brakes?",
@@ -789,12 +848,13 @@ export default [
             "You slam hard on the breaks, everything in the car violently jerks forward. You slam into the steering wheel. The breaks skid, and you stop right before plummeting into the abyss.  The car is fine, but you are bruised up.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_15.jpg",
+        progress: 56,
         // action: - 5 health
         options: [
             {
                 text: "Continue",
                 nextText: 16,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -805,12 +865,13 @@ export default [
             "You slam on thefuel, jumping the fissure. You make it across, but the car slams hard into the pavement, damaging the body. But you are able to keep driving.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_15.jpg",
+        progress: 56,
         // action: -5 gas
         options: [
             {
                 text: "Continue",
                 nextText: 16,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -821,6 +882,7 @@ export default [
             "You come across an abandoned, armored, car similar to yours. The driver’s skeleton is slumped over the steering wheel. It is a reminder that there are others who have tried to make this journey who didn’t make it.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_16.jpg",
+        progress: 60,
         options: [
             {
                 text: "Loot the Trunk?",
@@ -841,12 +903,13 @@ export default [
             "Most of the food has begun to rot, but you manage to find some that’s salvageable. You also find a flashlight.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_16.jpg",
+        progress: 60,
         // action: + food, + 10 money, get flashlight
         options: [
             {
                 text: "Continue",
                 nextText: 17,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -857,12 +920,13 @@ export default [
             "You successfully siphon fuel from the tank, hopefully it’ll help you get further than this poor soul.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_16.jpg",
+        progress: 60,
         // action: + 10 fuel
         options: [
             {
                 text: "Continue",
                 nextText: 17,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -873,6 +937,7 @@ export default [
             "Driving through a heavily wooded stretch of road, you hear horrible screaming. Somebody sounds like they are in incredible pain.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_17.jpg",
+        progress: 64,
         options: [
             {
                 text: "Stop to investigate?",
@@ -893,12 +958,13 @@ export default [
             "You pull over and follow the sounds of screams. You come upon an empty clearing, the sound of screams piercing your ears. There’s no one around, but you do find an axe viciously wedged in a tree. You pull the bloodstained ax out and the screams dissipate into the wind.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_17.jpg",
+        progress: 64,
         // action: + item axe
         options: [
             {
                 text: "Continue",
                 nextText: 18,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -909,12 +975,13 @@ export default [
             "The screams continue echoing out. You still hear them as you sleep long after you leave the woods.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_17.jpg",
+        progress: 64,
         // action: - 10 health
         options: [
             {
                 text: "Continue",
                 nextText: 18,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -925,6 +992,7 @@ export default [
             "While looting an abandoned grocery store, you hear a noise in the back. You find a survivor holed up here. He looks pretty badly injured, but he has plenty of supplies.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_18.jpg",
+        progress: 70,
         options: [
             {
                 text: "Rob him?",
@@ -950,12 +1018,13 @@ export default [
             "You start stealing his supplies and he attacks! You manage to dispatch the man and steal everything you can carry. But boy you feel bad.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_18.jpg",
+        progress: 70,
         // action: + 10 food + 10 money - 10 health
         options: [
             {
                 text: "Continue",
                 nextText: 19,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -965,11 +1034,12 @@ export default [
         text: "You leave the man alone. The road has not made you a monster.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_18.jpg",
+        progress: 70,
         options: [
             {
                 text: "Continue",
                 nextText: 19,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -980,12 +1050,13 @@ export default [
             "You give the man medicine, it should ease the pain a bit. He gives you some supplies as thanks.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_18.jpg",
+        progress: 70,
         // action: + 10 food + 10 fuel + 20 money
         options: [
             {
                 text: "Continue",
                 nextText: 19,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -996,6 +1067,7 @@ export default [
             "You come across the entrance to an underground subway station. Inside is pitch black, but if there’s anything to loot odds are the darkness dissuaded anybody else from trying.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_19.webp",
+        progress: 74,
         options: [
             {
                 text: "Explore the darkness?",
@@ -1021,12 +1093,13 @@ export default [
             "You take the steps down into the inky darkness, feeling your way through. Your eyes begin to adjust, but only barely. You trip, stumble, and fall your way around. You grab  what you think might be some supplies, you’ll find out when you reach the light again.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_19.webp",
+        progress: 74,
         // action: + 5 food -5 health
         options: [
             {
                 text: "Continue",
                 nextText: 20,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -1036,11 +1109,12 @@ export default [
         text: "You know better than to get lost in the dark. You keep driving.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_19.webp",
+        progress: 74,
         options: [
             {
                 text: "Continue",
                 nextText: 20,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -1051,12 +1125,13 @@ export default [
             "You use your flashlight as a guide into the darkness. You find an old news stand left mostly untouched. You’d go deeper, but strange guttural noises from deeper in the tunnels persuade you otherwise.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_19.webp",
+        progress: 74,
         // action: + 10 food + 20 money
         options: [
             {
                 text: "Continue",
                 nextText: 20,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -1067,6 +1142,7 @@ export default [
             "You drive out onto the runway of O’hare airport where a small settlement lives inside a cluster of superliners. Guard turrets poke out of airplane windows.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_20.jpg",
+        progress: 78,
         // actio: ,
         options: [
             {
@@ -1088,6 +1164,7 @@ export default [
             "“Welcome to the CARGO HOLD!” an old woman flanked by guardsmen bellows out. “Fresh outta peanuts, but  you’ll find all kinds of travellin needs here.”",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_20.jpg",
+        progress: 78,
         // action: +10 food - 5 money
         options: [
             {
@@ -1110,11 +1187,12 @@ export default [
             "You start up the car and begin driving down the final stretch of the journey.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_20.jpg",
+        progress: 78,
         options: [
             {
                 text: "Continue",
                 nextText: 21,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -1125,6 +1203,7 @@ export default [
             "The skies grow full with deep red clouds. Drops of crimson rain begin to fall, sizzling as they hit your car, dissolving the metal. It looks like the storm will only worsen.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_21.jpg",
+        progress: 82,
         options: [
             {
                 text: "Outrun the storm?",
@@ -1147,11 +1226,12 @@ export default [
             "You slam on thefuel, trying to outrun the storm. You manage to stay ahead of the squall, but red rops still burn through the roof of your car, tainting some supplies.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_21.jpg",
+        progress: 82,
         options: [
             {
                 text: "Continue",
                 nextText: 22,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -1162,11 +1242,12 @@ export default [
             "You maneuver under the first shelter you can find, a dilapidated overpass.The rain starts pouring down, the stench of dissolving asphalt filling your lungs.  The rain lasts all day, forcing you to use up additional supplies.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_21.jpg",
+        progress: 82,
         options: [
             {
                 text: "Continue",
                 nextText: 22,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -1177,6 +1258,7 @@ export default [
             "You come across a group of armed soldiers alongside the road. They claim to be performing health checks on anyone making their way to D.C. They ask you to step out of the car.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_22.jpg",
+        progress: 86,
         options: [
             {
                 text: "Allow health check?",
@@ -1199,11 +1281,12 @@ export default [
             "The men reveal themselves to be bandits, rough you up, and steal most of your food.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_22.jpg",
+        progress: 86,
         options: [
             {
                 text: "Continue",
                 nextText: 23,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -1214,11 +1297,12 @@ export default [
             "Smelling a trap, you slam on the gasl. A few stray bullets pierce your car but you escape mostly unharmed.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_22.jpg",
+        progress: 86,
         options: [
             {
                 text: "Continue",
                 nextText: 23,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -1229,6 +1313,7 @@ export default [
             "While looting inside an old house, you start to hear the sound of a creepy little girl singing. Ah jeez. You turn around and, yep, that’s a scary ass little girl in a white dress being all creepy. Oh this is bad. What is even happening. The walls start to melt.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_23.jpg",
+        progress: 90,
         options: [
             {
                 text: "Run Away?",
@@ -1251,11 +1336,12 @@ export default [
             "You run down the halls, the exit getting further and further away. The singing gets louder, soon your teeth all fall out. And you’re in highschool again and….You wake up. The nightmare prevented you from getting restful sleep, you drive groggy.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_23.jpg",
+        progress: 90,
         options: [
             {
                 text: "Continue",
                 nextText: 23,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -1266,11 +1352,12 @@ export default [
             "You realize that even though a lot of weird things have been happening, this is definitely a dream. You manage to fly away before waking up, feeling well rested.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_23.jpg",
+        progress: 90,
         options: [
             {
                 text: "Continue",
                 nextText: 24,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -1281,6 +1368,7 @@ export default [
             "While looting, fine white powder starts falling from the sky, landing in neat piles alonsite. A wintery sort of landscape begins to form.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_24.gif",
+        progress: 94,
         options: [
             {
                 text: "Try catching some on your tongue",
@@ -1302,11 +1390,12 @@ export default [
             "You try catching some flakes on your tongue, but the white specs feel warm on touch. What you thought was snow turns out to be ash. You cought and sputter, making your way back to the car.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_24.gif",
+        progress: 94,
         options: [
             {
                 text: "Continue",
                 nextText: 25,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -1317,11 +1406,12 @@ export default [
             "You get back to the car and keep driving, the windshield wipers swiping the ash from your windshield.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_24.gif",
+        progress: 94,
         options: [
             {
                 text: "Continue",
                 nextText: 25,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -1332,6 +1422,7 @@ export default [
             "The large concrete barrier surrounding D.C. appears on the horizon. You’re within miles of your destination. Suddenly, your car starts to sputter, black smoke begins billowing from the hood.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_25.jpg",
+        progress: 98,
         options: [
             {
                 text: "Keep driving",
@@ -1354,11 +1445,12 @@ export default [
             "The car just has to last for a few more minutes, you can’t stop now. Black smoke starts filling the vehicle. Before you know it, you’ve crashed into the gates of D.C.",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_25.jpg",
+        progress: 98,
         options: [
             {
                 text: "Continue",
                 nextText: 26,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -1369,11 +1461,12 @@ export default [
             "You leave some supplies, but that’s not important. You run, body exhausted from driving, the car starts burning behind you. You’re can see the entrance gates…",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_25.jpg",
+        progress: 98,
         options: [
             {
                 text: "Continue",
                 nextText: 26,
-                action: []
+                action: [12]
             }
         ]
     },
@@ -1384,6 +1477,7 @@ export default [
             "It's been a brutal journey. It's had its ups and downs but you have perservered. You've won",
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_26.jpg",
+        progress: 100,
         options: [
             {
                 text: "Play Again?",
@@ -1423,7 +1517,7 @@ export default [
             {
                 text: "Play Again?",
                 nextText: 1,
-                action: [33]
+                action: []
             }
         ]
     },
