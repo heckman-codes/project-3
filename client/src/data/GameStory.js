@@ -5,10 +5,8 @@ export default [
     {
         id: 1,
         title: "Introduction",
-        text:
-            "It’s been five years since the cataclysm. You’ve been etching out a living in what remains of Sacramento. The landscape of skyscrapers and towering structures had been reduced to smoldering piles of rubble from the near daily earthquakes. You’ve scraped by on supplies from various looting runs, but everything seems to be running out. The time to journey east is now. You’ve been modifying an old ford to make the journey, welding on armor and siphoning what gas you can. Before the signal died out last year, you picked up a radio signal repeating the message “Washington D.C. is the last remaining safe zone. For anyone listening, if you can make it here, we can help you.” You could hit the road now, or make one last stop at old Pete’s and buy additional supplies.",
-        image:
-            "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_1.gif",
+        text: "It’s been five years since the cataclysm. You’ve been etching out a living in what remains of Sacramento. The landscape of skyscrapers and towering structures had been reduced to smoldering piles of rubble from the near daily earthquakes. You’ve scraped by on supplies from various looting runs, but everything seems to be running out. The time to journey east is now. You’ve been modifying an old ford to make the journey, welding on armor and siphoning what gas you can. Before the signal died out last year, you picked up a radio signal repeating the message “Washington D.C. is the last remaining safe zone. For anyone listening, if you can make it here, we can help you.” You could hit the road now, or make one last stop at old Pete’s and buy additional supplies.",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_1.gif",
         options: [
             {
                 text: "Leave without visiting the shop.",
@@ -27,8 +25,7 @@ export default [
         title: "Introduction",
         text:
             "You never were good at goodbyes, and Pete’s scavenging skills are as faded as his memory these days. You rev up the engine and begining your journey across US 50.",
-        image:
-            "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_1.gif",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_1.gif",
         options: [
             {
                 text: "Continue",
@@ -42,8 +39,7 @@ export default [
         title: "Introduction",
         text:
             "You decide to visit old Pete one last time and see what he has that might be useful for the long journey.",
-        image:
-            "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_1.gif",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_1.gif",
         options: [
             {
                 text: "Continue",
@@ -57,8 +53,7 @@ export default [
         title: "Welcome to Old Pete's Caravan",
         text:
             "You enter old Pete’s mobile home, greeted by a familiar but still overwhelming stench. Pete had a way of scavenging and crafting useful supplies, and was one of the few folks out there still accepting paper currency. ‘I still don’t see why you believe in that safezone nonsense,’a gruff voice bellows out from behind his scruffy moustache. But I guess this is goodbye then. Better stock up before you go, anything here you lookin to buy?.",
-        image:
-            "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_2.gif",
+        image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_2.gif",
         options: [
             {
                 text: "Would you like to purchase an axe?",
@@ -625,7 +620,8 @@ export default [
             {
                 text: "Throw large bone to the Beast?",
                 nextText: 12.3,
-                action: [11]
+                action: [11, 38],
+                showIfInventoryHas: 4
             }
         ]
     },
@@ -1388,13 +1384,8 @@ export default [
             {
                 text: "Play Again?",
                 nextText: 1,
-                action: []
+                action: [33]
             },
-            {
-                text: "Visit Old Pete's Shop.",
-                nextText: 1.2,
-                action: []
-            }
         ]
     },
     {
@@ -1408,7 +1399,7 @@ export default [
             {
                 text: "Play Again?",
                 nextText: 1,
-                action: []
+                action: [33]
             }
         ]
     },
@@ -1438,7 +1429,7 @@ export default [
             {
                 text: "Play Again?",
                 nextText: 1,
-                action: []
+                action: [33]
             }
         ]
     }
