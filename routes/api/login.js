@@ -13,12 +13,4 @@ router
     .post(usersController.create)
     .delete(usersController.remove);
 
-// Signup should only post and delete
-router
-    .route('/:signup')
-    .get(usersController.findById)
-    .put(usersController.update)
-    .post(usersController.create)
-    .delete(usersController.remove);
-
 module.exports = router
