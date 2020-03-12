@@ -30,12 +30,12 @@ function GameCol(props) {
             </div>
             <div className="text-window">
                 <p className="event-text" style={{ color: "gold" }}>{title}</p>
-                {/* <Typist avgTypingDelay={1} key={showTyping}> */}
-                <p className="event-text" style={{ fontFamily: 'Arcade', textTransform: 'initial' }}>{text}</p>
-                {options.map(opt =>
-                    <button className="option-button" key={opt.text} onClick={() => { props.actionMethod(opt.action); props.storyMethod(opt.nextText); setShowTyping(showTyping + 1); }}>{opt.text}</button>
-                )}
-                {/* </Typist> */}
+                <Typist avgTypingDelay={1} key={showTyping}>
+                    <p className="event-text" style={{ fontFamily: 'Arcade', textTransform: 'initial' }}>{text}</p>
+                    {options.map(opt =>
+                        <button className="option-button" key={opt.text} onClick={() => { props.actionMethod(opt.action, opt.nextText); setShowTyping(showTyping + 1); }}>{opt.text}</button>
+                    )}
+                </Typist>
             </div>
         </div >
     );

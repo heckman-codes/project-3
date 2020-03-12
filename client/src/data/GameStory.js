@@ -1423,7 +1423,7 @@ export default [
             {
                 text: "Play Again?",
                 nextText: 1,
-                action: []
+                action: [33]
             }
         ]
     },
