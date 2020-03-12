@@ -22,12 +22,9 @@ const Signup = (props) => {
         setFormObject({ ...formObject, [name]: value })
     };
 
-    // When the form is submitted, use the API.saveBook method to save the book data
-    // Then reload books from the database
     function handleFormSubmit(event) {
         event.preventDefault();
-        if (formObject.name && formObject.password) {
-            console.log("User added.")
+        if (formObject.username && formObject.password === formObject.confirmPassword) {
             API.addUser({
                 username: formObject.username,
                 password: formObject.password
@@ -35,6 +32,9 @@ const Signup = (props) => {
                 .then(res => history.push("/characters"))
                 .catch(err => console.log(err));
         }
+        else (
+            console.log("You failed.")
+        )
     };
 
 

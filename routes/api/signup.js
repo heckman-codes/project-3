@@ -7,7 +7,7 @@ router
 
 // Login should only get, put, delete
 router
-    .route('/api/signup')
+    .route('/signup')
     .get(usersController.findById)
     .put(usersController.update)
     .post(usersController.create)
