@@ -9,7 +9,11 @@ import "../../pages/Home/style.css";
 const Signup = (props) => {
     // const [username, setUsername] = useState();
     // const [password, setPassword] = useState();
-    const [formObject, setFormObject] = useState({})
+    const [formObject, setFormObject] = useState({
+        username: "",
+        password: "",
+        confirmPassword: ""
+    })
     const history = useHistory();
 
     // Handles updating component state when the user types into the input field
