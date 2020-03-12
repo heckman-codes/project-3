@@ -11,7 +11,6 @@ const Login = (props) => {
     const [formObject, setFormObject] = useState({
         username: "",
         password: "",
-        confirmPassword: ""
     })
 
     const history = useHistory();
@@ -27,9 +26,7 @@ const Login = (props) => {
         event.preventDefault();
         if (formObject.username && formObject.password) {
             API.getLogin({
-                //     if(id === _id) {
-                //     console.log("welcome back")
-                // }
+
                 username: formObject.username,
                 password: formObject.password
             })
