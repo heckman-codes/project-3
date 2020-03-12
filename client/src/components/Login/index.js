@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import API from "../../utils/API"
 import HomeContainer from "../HomeContainer";
 import HomeCol from "../HomeCol";

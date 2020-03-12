@@ -35,9 +35,9 @@ app.use(cookieParser());
 
 //   next();
 // });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/thelongway");
 app.use(routes);
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/thelongway");
 app.get("*", (reg, res) => {
   res.sendFile(path.join(__dirname, "/client/public/index.html"))
 })
