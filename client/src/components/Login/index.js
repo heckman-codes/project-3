@@ -4,6 +4,8 @@ import HomeCol from "../HomeCol";
 import HomeRow from "../HomeRow";
 import "../../pages/Home/style.css";
 
+import axios from 'axios';
+
 const Login = (props) => {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
