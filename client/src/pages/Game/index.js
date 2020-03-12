@@ -9,7 +9,7 @@ import GameStory from '../../data/GameStory';
 import useableItems from '../../data/useableItems';
 import playableCharacters from '../../data/Characters';
 
-var invExport;
+
 
 // for (let i = 0; i < GameStory.length; i++) {
 //     console.log(i + " - " + GameStory[i].id)
@@ -48,28 +48,30 @@ function Game() {
     const resetPlayer = () => playableCharacters.filter(instance => playerState.name === instance.name)[0]
 
 
-
     const fetchState = (nextText) => GameStory.filter(instance => nextText === instance.id)[0];
+    // game state
+    const setStory = (nextText) => {
+        console.log(playerState);
 
-    // const setStory = (nextText) => {
-    //     console.log(playerState);
+        // const setStory = (nextText) => {
+        //     console.log(playerState);
 
-    //     if (playerState.hp <= 0) {
-    //         setStoryState(GameStory[78]);
-    //     } else if (playerState.fuel <= 0) {
-    //         console.log(playerState);
-    //         setStoryState(GameStory[79]);
-    //     } else if (playerState.food <= 0) {
-    //         setStoryState(GameStory[80]);
-    //     } else {
-    //         let storyStatus = fetchState(nextText);
-    //         setStoryState(storyStatus);
-    //     }
-    // }
+        //     if (playerState.hp <= 0) {
+        //         setStoryState(GameStory[78]);
+        //     } else if (playerState.fuel <= 0) {
+        //         console.log(playerState);
+        //         setStoryState(GameStory[79]);
+        //     } else if (playerState.food <= 0) {
+        //         setStoryState(GameStory[80]);
+        //     } else {
+        //         let storyStatus = fetchState(nextText);
+        //         setStoryState(storyStatus);
+        //     }
+        // }
 
-    // invExport = playerState.inventory
+        // invExport = playerState.inventory
 
-
+    }
     const removeItem = (name) => {
         if (playerState.inventory.length === 1) {
             playerState.inventory = [];
@@ -259,9 +261,8 @@ function Game() {
             </StoryContext.Provider>
         </div>
     );
+
 }
 
 
 export default Game;
-
-export var inven = invExport;
