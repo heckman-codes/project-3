@@ -1,56 +1,37 @@
 import React, { useState } from "react";
-import axios from 'axios';
+import { useHistory } from "react-router-dom";
+import API from "../../utils/API"
 import HomeContainer from "../HomeContainer";
 import HomeCol from "../HomeCol";
 import HomeRow from "../HomeRow";
 import "../../pages/Home/style.css";
 
 const Signup = (props) => {
-    const [username, setUsername] = useState();
-    const [password, setPassword] = useState();
+    // const [username, setUsername] = useState();
+    // const [password, setPassword] = useState();
+    const [formObject, setFormObject] = useState({})
+    const history = useHistory();
 
-<<<<<<< HEAD
-    // const [formObject, setFormObject] = useState({})
+    // Handles updating component state when the user types into the input field
+    function handleInputChange(event) {
+        const { name, value } = event.target;
+        setFormObject({ ...formObject, [name]: value })
+    };
 
-    // useEffect(() => {
-    //     addUser()
-    // }, [])
+    // When the form is submitted, use the API.saveBook method to save the book data
+    // Then reload books from the database
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        if (formObject.name && formObject.password) {
+            API.addUser({
+                username: formObject.username,
+                password: formObject.password
+            })
+                .then(res => history.push("/characters"))
+                .catch(err => console.log(err));
+        }
+    };
 
-
-    // function addUser() {
-    //     API.loadUser()
-    //         .then(res =>
-    //             setUsers(res.data)
-    //         )
-    //         .catch(err => console.log(err));
-    // };
-
-    // // Handles updating component state when the user types into the input field
-    // function handleInputChange(event) {
-    //     const { name, value } = event.target;
-    //     setFormObject({ ...formObject, [name]: value })
-    // };
-
-    // // When the form is submitted, use the API.saveBook method to save the book data
-    // // Then reload books from the database
-    // function handleFormSubmit(event) {
-    //     event.preventDefault();
-    //     if (formObject.name && formObject.password) {
-    //         API.saveUser({
-    //             name: formObject.name,
-    //             password: formObject.password
-    //         })
-    //             .then(res => loadUser())
-    //             .catch(err => console.log(err));
-    //     }
-    // };
-
-=======
-    // function for calling axios
-    function signUp() {
-
-    }
->>>>>>> 79c7a15583988e23f4aca6d244cac8cbd8740fc6
 
     return (
         <div>
@@ -66,7 +47,8 @@ const Signup = (props) => {
                                 type="text"
                                 placeholder="Username"
                                 name="username"
-                                onChange={e => setUsername(e.target.value)}
+                                value={formObject.username}
+                                onChange={handleInputChange}
                             />
                         </HomeCol>
                     </HomeRow>
@@ -77,8 +59,8 @@ const Signup = (props) => {
                                 type="password"
                                 placeholder="Password"
                                 name="password"
-                                value={password}
-                                onChange={e => setPassword(e.target.value)}
+                                value={formObject.password}
+                                onChange={handleInputChange}
                             />
                         </HomeCol>
                     </HomeRow>
@@ -90,14 +72,14 @@ const Signup = (props) => {
                                 type="password"
                                 placeholder="Confirm Password"
                                 name="confirmPassword"
-                                value={password}
-                                onChange={e => setPassword(e.target.value)}
+                                value={formObject.confirmPassword}
+                                onChange={handleInputChange}
 
                             />
                         </HomeCol>
                     </HomeRow>
 
-                    <button onClick={signUp} className="btn btn-success" type="submit" id="signUpBtn">
+                    <button onClick={handleFormSubmit} className="btn btn-success" type="submit" id="signUpBtn">
                         Sign Up
                     </button>
                 </HomeContainer>
