@@ -5,10 +5,7 @@ import PlayerContext from '../../utils/PlayerContext';
 
 function GameCol(props) {
     const { image, title, text, options, progress } = useContext(StoryContext);
-<<<<<<< HEAD
     const { inventory } = useContext(PlayerContext);
-=======
->>>>>>> fc4600546a6bec8346798b381766952959ba7997
     console.log(props);
     const [showTyping, setShowTyping] = useState(0);
 
@@ -35,7 +32,6 @@ function GameCol(props) {
             </div>
             <div className="text-window">
                 <p className="event-text" style={{ color: "gold" }}>{title}</p>
-<<<<<<< HEAD
                 <Typist avgTypingDelay={1} key={showTyping}>
                     <p className="event-text" style={{ fontFamily: 'Arcade', textTransform: 'initial' }}>{text}</p>
                     {options.map(opt => {
@@ -48,14 +44,6 @@ function GameCol(props) {
                     }
                     )}
                 </Typist>
-=======
-                {/* <Typist avgTypingDelay={1} key={showTyping}> */}
-                <p className="event-text" style={{ fontFamily: 'Arcade', textTransform: 'initial' }}>{text}</p>
-                {options.map(opt =>
-                    <button className="option-button" key={opt.text} onClick={() => { props.actionMethod(opt.action, opt.nextText); setShowTyping(showTyping + 1); }}>{opt.text}</button>
-                )}
-                {/* </Typist> */}
->>>>>>> fc4600546a6bec8346798b381766952959ba7997
             </div>
         </div >
     );
