@@ -43,7 +43,7 @@ function Game() {
     // const [playerState, setPlayerState] = useState(playerProfile);
 
     const [storyState, setStoryState] = useState(GameStory[0]);
-    console.log(storyState.text)
+    // console.log(storyState.text)
 
     // const getProgress = (state_id) => {
     //     let progressPercent = 0;
@@ -206,6 +206,9 @@ function Game() {
                 case 39:
                     inventoryArr.splice(inventoryArr.map((x) => x.item_id).indexOf(5), 1)
                     break;
+                case 40:
+                    health = health + 50;
+                    inventoryArr.splice(inventoryArr.map((x) => x.item_id).indexOf(5), 1)
                 default:
                     break
             }

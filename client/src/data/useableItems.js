@@ -37,9 +37,9 @@ const useableItems = [
     {
         item_id: 5,
         name: "Medicine",
-        desc: "I was always taught not to pop pills. Now is as good a time as any.",
+        desc: "+50 HP when used. Or maybe save this — Someone else could use it",
         image: "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/item_medicine.gif",
-        action: []
+        action: [40]
     },
     {
         item_id: 6,
