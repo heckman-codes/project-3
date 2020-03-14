@@ -407,7 +407,7 @@ export default [
     text:
       "'The spirit of Lady Luck is still alive, even if everybody else is dead. I’m going to throw this rock into the pit, if it lands red side up, you double your bet, if it lands black side up, I keep your money. What do you say?'",
     image:
-      "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_8.jpg",
+      "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_8a.jpg",
     progress: 28,
     // action: 10 bet 5
     // action: 11 bet 10
@@ -436,7 +436,7 @@ export default [
     text:
       "CHRISTOPHER: 'I spelunk into the pit so you don’t have to, and pass the savings on to you! It’s the safe way!'",
     image:
-      "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_8.jpg",
+      "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_8b.jpg",
     progress: 28,
     options: [
       {
@@ -478,7 +478,7 @@ export default [
     text:
       "You hurl the rock into the pit, it bounces off a light post and lands BLACK SIDE Up. LUCY: “Looks like Lady Luck wasn’t on your side today.”",
     image:
-      "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_8.jpg",
+      "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_8a.jpg",
     progress: 28,
     options: [
       {
@@ -1083,7 +1083,8 @@ export default [
       {
         text: "Use flashlight to explore?",
         nextText: 19.3,
-        action: [9, 22]
+        action: [9, 22, 36],
+        showIfInventoryHas: 2
       }
     ]
   },
@@ -1272,6 +1273,13 @@ export default [
         nextText: 22.2,
         // action: - 5 fuel
         action: [12]
+      },
+      {
+        text: "Step out of car with your Ax?",
+        nextText: 22.3,
+        // action: -15 health - 15 food
+        action: [21, 11],
+        showIfInventoryHas: 0
       }
     ]
   },
@@ -1295,7 +1303,7 @@ export default [
     id: 22.2,
     title: "Health Checkpoint",
     text:
-      "Smelling a trap, you slam on the gasl. A few stray bullets pierce your car but you escape mostly unharmed.",
+      "Smelling a trap, you slam on the gas. A few stray bullets pierce your car but you escape mostly unharmed.",
     image:
       "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_22.jpg",
     progress: 86,
@@ -1304,6 +1312,22 @@ export default [
         text: "Continue",
         nextText: 23,
         action: [12]
+      }
+    ]
+  },
+  {
+    id: 22.3,
+    title: "Health Checkpoint",
+    text:
+      "The men reveal themselves to be bandits, but you manage to fight them off using your ax. You make off with a few of their supplies and continue driving",
+    image:
+      "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_22.jpg",
+    progress: 86,
+    options: [
+      {
+        text: "Continue",
+        nextText: 23,
+        action: [12, 34]
       }
     ]
   },
@@ -1341,7 +1365,7 @@ export default [
     options: [
       {
         text: "Continue",
-        nextText: 23,
+        nextText: 24,
         action: [12]
       }
     ]
