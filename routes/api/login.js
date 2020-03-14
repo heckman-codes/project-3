@@ -4,9 +4,9 @@ const usersController = require('../../controllers/userController');
 // Login should only get, put, delete
 router
     .route('/login')
-    .get(usersController.findById)
+    .get(usersController.findOne)
     .put(usersController.update)
     .post(usersController.create)
     .delete(usersController.remove);
 
-module.exports = router
+module.exports = router;
