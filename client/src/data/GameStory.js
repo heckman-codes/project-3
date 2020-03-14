@@ -84,7 +84,7 @@ export default [
                 cost: 15
             },
             {
-                text: "No thanks I dont need any supplies, today.",
+                text: "Continue on your journey to the safe zone.",
                 nextText: 2.1,
                 action: []
             }
@@ -1029,7 +1029,7 @@ export default [
             {
                 text: "Help him?",
                 nextText: 18.3,
-                action: [9, 13, 22],
+                action: [9, 13, 22, 39],
                 showIfInventoryHas: 5
             }
         ]
@@ -1188,18 +1188,25 @@ export default [
         image:
             "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_20.jpg",
         progress: 78,
-        // action: +10 food - 5 money
+        // action: +10 food - 10 money
         options: [
             {
-                text: "Purchase Food?",
-                nextText: 20.2,
-                action: [9, 25]
+                text: "Purchase Food?(10)",
+                nextText: 20.1,
+                action: [9, 26],
+                cost: 10
             },
             {
-                text: "Purchase Fuel?",
-                nextText: 20.2,
+                text: "Purchase Fuel?(20)",
+                nextText: 20.1,
                 // action: +10 fuel - 20 money
-                action: [13, 28]
+                action: [13, 28],
+                cost: 20
+            },
+            {
+                text: "Continue on your journey to the safe zone?",
+                nextText: 20.2,
+                action: [],
             }
         ]
     },
