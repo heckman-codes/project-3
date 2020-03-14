@@ -58,8 +58,6 @@ function GameCol(props) {
                         }
                     }
                 }
-
-
                 )}
                 {/* </Typist> */}
             </div>

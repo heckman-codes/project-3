@@ -65,12 +65,13 @@ export default [
         progress: 4,
         options: [
             {
-                text: "Would you like to purchase an axe? (20)",
+                text: "Would you like to purchase an axe?(20)",
                 nextText: 2,
                 action: [1, 28],
+                cost: 20
             },
             {
-                text: "Would you like to purchase food for your travels? (10)",
+                text: "Would you like to purchase food for your travels?(10)",
                 nextText: 2,
                 action: [9, 26],
                 cost: 10
@@ -1009,7 +1010,8 @@ export default [
             {
                 text: "Help him?",
                 nextText: 18.3,
-                action: [9, 13, 22]
+                action: [9, 13, 22],
+                showIfInventoryHas: 5
             }
         ]
     },
@@ -1084,7 +1086,7 @@ export default [
             {
                 text: "Use flashlight to explore?",
                 nextText: 19.3,
-                action: [9, 22]
+                action: [9, 22, 36]
             }
         ]
     },
@@ -1514,7 +1516,7 @@ export default [
             {
                 text: "Play Again?",
                 nextText: 1,
-                action: []
+                action: [33]
             }
         ]
     },
