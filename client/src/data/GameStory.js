@@ -66,16 +66,25 @@ export default [
     options: [
       {
         text: "Would you like to purchase an axe?(20)",
-        nextText: 2.1,
-        action: [1, 28]
+        nextText: 2,
+        action: [1, 28],
+        hideIfAlreadyHas: 0,
+        cost: 20
       },
       {
         text: "Would you like to purchase food for your travels?(10)",
-        nextText: 3,
-        action: [9, 26]
+        nextText: 2,
+        action: [9, 26],
+        cost: 10
       },
       {
-        text: "No thanks I dont need any supplies, today.",
+        text: "Would you like to purchase fuel for your travels?(15)",
+        nextText: 2,
+        action: [27, 13],
+        cost: 15
+      },
+      {
+        text: "Continue on your journey to the safe zone.",
         nextText: 2.1,
         action: []
       }
@@ -93,7 +102,7 @@ export default [
       {
         text: "Continue",
         nextText: 3,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -132,7 +141,7 @@ export default [
       {
         text: "Continue",
         nextText: 4,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -150,7 +159,7 @@ export default [
       {
         text: "Continue",
         nextText: 4,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -189,7 +198,7 @@ export default [
       {
         text: "Continue",
         nextText: 5,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -206,7 +215,7 @@ export default [
       {
         text: "Continue",
         nextText: 5,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -244,7 +253,7 @@ export default [
       {
         text: "Continue",
         nextText: 6,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -261,7 +270,7 @@ export default [
       {
         text: "Continue",
         nextText: 6,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -299,7 +308,7 @@ export default [
       {
         text: "Continue",
         nextText: 7,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -315,7 +324,7 @@ export default [
       {
         text: "Continue",
         nextText: 7,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -353,7 +362,7 @@ export default [
       {
         text: "Continue",
         nextText: 8,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -370,7 +379,7 @@ export default [
       {
         text: "Continue",
         nextText: 8,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -416,17 +425,20 @@ export default [
       {
         text: "Bet 5?",
         nextText: 8.4,
-        action: [25]
+        action: [25],
+        cost: 5
       },
       {
         text: "Bet 10?",
         nextText: 8.4,
-        action: [26]
+        action: [26],
+        cost: 10
       },
       {
         text: "Bet 25?",
         nextText: 8.4,
-        action: [29]
+        action: [29],
+        cost: 25
       }
     ]
   },
@@ -441,18 +453,27 @@ export default [
     options: [
       {
         text: "Buy Food?",
-        nextText: 9,
-        action: [11, 25]
+        nextText: 8.2,
+        action: [11, 25],
+        cost: 10
       },
       {
         text: "Buy Fuel?",
-        nextText: 9,
-        action: [13, 26]
+        nextText: 8.2,
+        action: [13, 26],
+        cost: 10
       },
       {
         text: "Buy medicine?",
+        nextText: 8.2,
+        action: [6, 28],
+        hideIfAlreadyHas: 5,
+        cost: 20
+      },
+      {
+        text: "Continue",
         nextText: 9,
-        action: [6, 28]
+        action: [12, 8]
       }
     ]
   },
@@ -468,7 +489,7 @@ export default [
       {
         text: "Continue",
         nextText: 9,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -484,7 +505,7 @@ export default [
       {
         text: "Continue",
         nextText: 9,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -523,7 +544,7 @@ export default [
       {
         text: "Continue",
         nextText: 10,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -539,7 +560,7 @@ export default [
       {
         text: "Continue",
         nextText: 10,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -577,7 +598,7 @@ export default [
       {
         text: "Continue",
         nextText: 11,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -594,7 +615,7 @@ export default [
       {
         text: "Continue",
         nextText: 11,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -632,7 +653,7 @@ export default [
       {
         text: "Continue",
         nextText: 12,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -649,7 +670,7 @@ export default [
       {
         text: "Continue",
         nextText: 12,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -693,7 +714,7 @@ export default [
       {
         text: "Continue",
         nextText: 13,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -710,7 +731,7 @@ export default [
       {
         text: "Continue",
         nextText: 13,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -727,7 +748,7 @@ export default [
       {
         text: "Continue",
         nextText: 13,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -764,7 +785,7 @@ export default [
       {
         text: "Continue",
         nextText: 14,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -781,7 +802,7 @@ export default [
       {
         text: "Continue",
         nextText: 14,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -818,7 +839,7 @@ export default [
       {
         text: "Continue",
         nextText: 15,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -855,7 +876,7 @@ export default [
       {
         text: "Continue",
         nextText: 16,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -872,7 +893,7 @@ export default [
       {
         text: "Continue",
         nextText: 16,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -910,7 +931,7 @@ export default [
       {
         text: "Continue",
         nextText: 17,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -927,7 +948,7 @@ export default [
       {
         text: "Continue",
         nextText: 17,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -965,7 +986,7 @@ export default [
       {
         text: "Continue",
         nextText: 18,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -982,7 +1003,7 @@ export default [
       {
         text: "Continue",
         nextText: 18,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -1008,7 +1029,8 @@ export default [
       {
         text: "Help him?",
         nextText: 18.3,
-        action: [9, 13, 22]
+        action: [9, 13, 22, 39],
+        showIfInventoryHas: 5
       }
     ]
   },
@@ -1025,7 +1047,7 @@ export default [
       {
         text: "Continue",
         nextText: 19,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -1040,7 +1062,7 @@ export default [
       {
         text: "Continue",
         nextText: 19,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -1057,7 +1079,7 @@ export default [
       {
         text: "Continue",
         nextText: 19,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -1083,8 +1105,7 @@ export default [
       {
         text: "Use flashlight to explore?",
         nextText: 19.3,
-        action: [9, 22, 36],
-        showIfInventoryHas: 2
+        action: [9, 22, 36]
       }
     ]
   },
@@ -1101,7 +1122,7 @@ export default [
       {
         text: "Continue",
         nextText: 20,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -1116,7 +1137,7 @@ export default [
       {
         text: "Continue",
         nextText: 20,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -1133,7 +1154,7 @@ export default [
       {
         text: "Continue",
         nextText: 20,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -1167,18 +1188,25 @@ export default [
     image:
       "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_20.jpg",
     progress: 78,
-    // action: +10 food - 5 money
+    // action: +10 food - 10 money
     options: [
       {
-        text: "Purchase Food?",
-        nextText: 21,
-        action: [9, 25]
+        text: "Purchase Food?(10)",
+        nextText: 20.1,
+        action: [9, 26],
+        cost: 10
       },
       {
-        text: "Purchase Fuel?",
-        nextText: 21,
+        text: "Purchase Fuel?(20)",
+        nextText: 20.1,
         // action: +10 fuel - 20 money
-        action: [13, 28]
+        action: [13, 28],
+        cost: 20
+      },
+      {
+        text: "Continue on your journey to the safe zone?",
+        nextText: 20.2,
+        action: []
       }
     ]
   },
@@ -1194,7 +1222,7 @@ export default [
       {
         text: "Continue",
         nextText: 21,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -1233,7 +1261,7 @@ export default [
       {
         text: "Continue",
         nextText: 22,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -1249,7 +1277,7 @@ export default [
       {
         text: "Continue",
         nextText: 22,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -1275,10 +1303,10 @@ export default [
         action: [12]
       },
       {
-        text: "Step out of car with your Ax?",
+        text: "Allow health check, but bring your ax?",
         nextText: 22.3,
-        // action: -15 health - 15 food
-        action: [21, 11],
+        // action: - 5 fuel
+        action: [12],
         showIfInventoryHas: 0
       }
     ]
@@ -1295,7 +1323,7 @@ export default [
       {
         text: "Continue",
         nextText: 23,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -1303,7 +1331,7 @@ export default [
     id: 22.2,
     title: "Health Checkpoint",
     text:
-      "Smelling a trap, you slam on the gas. A few stray bullets pierce your car but you escape mostly unharmed.",
+      "Smelling a trap, you slam on the gasl. A few stray bullets pierce your car but you escape mostly unharmed.",
     image:
       "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_22.jpg",
     progress: 86,
@@ -1311,7 +1339,7 @@ export default [
       {
         text: "Continue",
         nextText: 23,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -1365,8 +1393,8 @@ export default [
     options: [
       {
         text: "Continue",
-        nextText: 24,
-        action: [12]
+        nextText: 23,
+        action: [12, 8]
       }
     ]
   },
@@ -1382,7 +1410,7 @@ export default [
       {
         text: "Continue",
         nextText: 24,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -1420,7 +1448,7 @@ export default [
       {
         text: "Continue",
         nextText: 25,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -1436,7 +1464,7 @@ export default [
       {
         text: "Continue",
         nextText: 25,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -1475,7 +1503,7 @@ export default [
       {
         text: "Continue",
         nextText: 26,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
@@ -1491,7 +1519,7 @@ export default [
       {
         text: "Continue",
         nextText: 26,
-        action: [12]
+        action: [12, 8]
       }
     ]
   },
