@@ -66,13 +66,14 @@ export default [
         options: [
             {
                 text: "Would you like to purchase an axe? (20)",
-                nextText: 2.1,
-                action: [1, 28]
+                nextText: 2,
+                action: [1, 28],
             },
             {
                 text: "Would you like to purchase food for your travels? (10)",
-                nextText: 3,
-                action: [9, 26]
+                nextText: 2,
+                action: [9, 26],
+                cost: 10
             },
             {
                 text: "No thanks I dont need any supplies, today.",
