@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.use(cookieParser());
+// app.use(cookieParser());rs
 // Add routes, both API and view
 
 
