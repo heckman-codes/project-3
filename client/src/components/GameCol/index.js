@@ -1,7 +1,7 @@
-import React, { useContext, useState } from 'react';
-import Typist from 'react-typist'
-import StoryContext from '../../utils/StoryContext'
-import PlayerContext from '../../utils/PlayerContext';
+import React, { useContext, useState } from "react";
+import Typist from "react-typist";
+import StoryContext from "../../utils/StoryContext";
+import PlayerContext from "../../utils/PlayerContext";
 
 function GameCol(props) {
     const { image, title, text, options, progress } = useContext(StoryContext);

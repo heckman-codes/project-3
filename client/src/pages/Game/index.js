@@ -1,22 +1,19 @@
-import React, { useState } from 'react';
-import Row from '../../components/Row';
-import PlayerCol from '../../components/PlayerCol';
-import GameCol from '../../components/GameCol';
-import InventoryCol from '../../components/InventoryCol';
-import PlayerContext from '../../utils/PlayerContext'
-import StoryContext from '../../utils/StoryContext'
-import GameStory from '../../data/GameStory';
-import useableItems from '../../data/useableItems';
-import playableCharacters from '../../data/Characters';
-
-
+import React, { useState } from "react";
+import Row from "../../components/Row";
+import PlayerCol from "../../components/PlayerCol";
+import GameCol from "../../components/GameCol";
+import InventoryCol from "../../components/InventoryCol";
+import PlayerContext from "../../utils/PlayerContext";
+import StoryContext from "../../utils/StoryContext";
+import GameStory from "../../data/GameStory";
+import useableItems from "../../data/useableItems";
+import playableCharacters from "../../data/Characters";
 
 // for (let i = 0; i < GameStory.length; i++) {
 //     console.log(i + " - " + GameStory[i].id)
 // }
 
 function Game() {
-
     // The code below is intended to load the player's state from MongoDB and then set that as the view state.
     // Eventually, if you die or win it loads a new storyState and you can choose a new character by clicking and option that
     // takes you to the character selection menu
@@ -36,14 +33,12 @@ function Game() {
 
     // let playerProfile;
 
-    // document.onload(setGameState);
-
+    const [storyState, setStoryState] = useState(GameStory[0]);
+    // console.log(storyState.text)
 
     const [playerState, setPlayerState] = useState(playableCharacters[3]);
     // const [playerState, setPlayerState] = useState(playerProfile);
-
-    const [storyState, setStoryState] = useState(GameStory[0]);
-    // console.log(storyState.text)
+    // console.log(storyState.text);
 
     // const getProgress = (state_id) => {
     //     let progressPercent = 0;
@@ -52,11 +47,11 @@ function Game() {
     //     return progressPercent;
     // }
 
-    const fetchState = (nextText) => GameStory.filter(instance => nextText === instance.id)[0];
+    const fetchState = nextText => GameStory.filter(instance => nextText === instance.id)[0];
 
     const actions = (actions, nextText) => {
         // console.log(actions);
-        let player = playerState
+        let player = playerState;
         let health = playerState.hp;
         let food = playerState.food;
         let fuel = playerState.fuel;
@@ -64,11 +59,8 @@ function Game() {
         let inventoryArr = playerState.inventory;
         let stateNum = storyState.id;
         console.log(stateNum);
-
-
         for (let i = 0; i < actions.length; i++) {
             const action = actions[i];
-
             switch (action) {
 
                 case 1:
@@ -222,27 +214,58 @@ function Game() {
         }
         // console.log(fuel);
         // console.log(money);
+
         if (health <= 0) {
-            setPlayerState({ ...playerState, food: food, hp: health, inventory: inventoryArr, money: money, fuel: fuel, state: stateNum });
-            setStoryState(GameStory[78]);
-            return;
-        } else if (fuel <= 0) {
-            console.log(player)
-            setPlayerState({ ...playerState, food: food, hp: health, inventory: inventoryArr, money: money, fuel: fuel, state: stateNum });
+            setPlayerState({
+                ...playerState,
+                food: food,
+                hp: health,
+                inventory: inventoryArr,
+                money: money,
+                fuel: fuel,
+                state: stateNum
+            });
             setStoryState(GameStory[79]);
             return;
-        } else if (food <= 0) {
-            setPlayerState({ ...playerState, food: food, hp: health, inventory: inventoryArr, money: money, fuel: fuel, state: stateNum });
+        } else if (fuel <= 0) {
+            console.log(player);
+            setPlayerState({
+                ...playerState,
+                food: food,
+                hp: health,
+                inventory: inventoryArr,
+                money: money,
+                fuel: fuel,
+                state: stateNum
+            });
             setStoryState(GameStory[80]);
+            return;
+        } else if (food <= 0) {
+            setPlayerState({
+                ...playerState,
+                food: food,
+                hp: health,
+                inventory: inventoryArr,
+                money: money,
+                fuel: fuel,
+                state: stateNum
+            });
+            setStoryState(GameStory[81]);
             return;
         } else {
             let storyStatus = fetchState(nextText);
             setStoryState(storyStatus);
         }
-        setPlayerState({ ...playerState, food: food, hp: health, inventory: inventoryArr, money: money, fuel: fuel, state: stateNum });
-
-    }
-
+        setPlayerState({
+            ...playerState,
+            food: food,
+            hp: health,
+            inventory: inventoryArr,
+            money: money,
+            fuel: fuel,
+            state: stateNum
+        });
+    };
 
     return (
         <div>
@@ -250,16 +273,13 @@ function Game() {
                 <PlayerContext.Provider value={playerState}>
                     <Row>
                         <PlayerCol />
-                        <GameCol actionMethod={actions}
-                            storyState={setStoryState} />
+                        <GameCol actionMethod={actions} storyState={setStoryState} />
                         <InventoryCol actionMethod={actions} />
                     </Row>
                 </PlayerContext.Provider>
             </StoryContext.Provider>
         </div>
     );
-
 }
-
 
 export default Game;
