@@ -10,7 +10,7 @@ const Login = (props) => {
 
     const [formObject, setFormObject] = useState({
         username: "",
-        password: ""
+        password: "",
     })
 
     const history = useHistory();
@@ -25,9 +25,11 @@ const Login = (props) => {
     function handleFormSubmit(event) {
         event.preventDefault();
         if (formObject.username && formObject.password) {
-            console.log(formObject)
-            API.getLogin(formObject)
+            API.getLogin({
 
+                username: formObject.username,
+                password: formObject.password
+            })
                 // insert play game history thing here...
                 .then(res => history.push("/game"))
                 .catch(err => console.log(err));

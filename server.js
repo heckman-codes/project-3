@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.use(cookieParser());
+// app.use(cookieParser());rs
 // Add routes, both API and view
 
 
@@ -35,9 +35,9 @@ app.use(cookieParser());
 
 //   next();
 // });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/thelongway");
 app.use(routes);
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/thelongway");
 app.get("*", (reg, res) => {
   res.sendFile(path.join(__dirname, "/client/public/index.html"))
 })
