@@ -189,24 +189,31 @@ function Game() {
                     inventoryArr = []
                     break;
                 case 34:
+                    //Removes Axe
                     inventoryArr.splice(inventoryArr.map((x) => x.item_id).indexOf(0), 1)
                     break;
                 case 35:
+                    //Removes Dog
                     inventoryArr.splice(inventoryArr.map((x) => x.item_id).indexOf(1), 1)
                     break;
                 case 36:
+                    //Removes Flashlight
                     inventoryArr.splice(inventoryArr.map((x) => x.item_id).indexOf(2), 1)
                     break;
                 case 37:
+                    //Removes Gun
                     inventoryArr.splice(inventoryArr.map((x) => x.item_id).indexOf(3), 1)
                     break;
                 case 38:
+                    //Removes Bone
                     inventoryArr.splice(inventoryArr.map((x) => x.item_id).indexOf(4), 1)
                     break;
                 case 39:
+                    //Removes Medicine
                     inventoryArr.splice(inventoryArr.map((x) => x.item_id).indexOf(5), 1)
                     break;
                 case 40:
+                    //Removes Medicine and Gains HP
                     health = health + 50;
                     inventoryArr.splice(inventoryArr.map((x) => x.item_id).indexOf(5), 1)
                 default:
