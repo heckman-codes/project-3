@@ -68,6 +68,7 @@ export default [
                 text: "Would you like to purchase an axe?(20)",
                 nextText: 2,
                 action: [1, 28],
+                hideIfAlreadyHas: 0,
                 cost: 20
             },
             {
@@ -75,6 +76,12 @@ export default [
                 nextText: 2,
                 action: [9, 26],
                 cost: 10
+            },
+            {
+                text: "Would you like to purchase fuel for your travels?(15)",
+                nextText: 2,
+                action: [27, 13],
+                cost: 15
             },
             {
                 text: "No thanks I dont need any supplies, today.",
@@ -95,7 +102,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 3,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -134,7 +141,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 4,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -152,7 +159,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 4,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -191,7 +198,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 5,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -208,7 +215,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 5,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -246,7 +253,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 6,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -263,7 +270,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 6,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -301,7 +308,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 7,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -317,7 +324,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 7,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -355,7 +362,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 8,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -372,7 +379,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 8,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -418,17 +425,20 @@ export default [
             {
                 text: "Bet 5?",
                 nextText: 8.4,
-                action: [25]
+                action: [25],
+                cost: 5
             },
             {
                 text: "Bet 10?",
                 nextText: 8.4,
-                action: [26]
+                action: [26],
+                cost: 10
             },
             {
                 text: "Bet 25?",
                 nextText: 8.4,
-                action: [29]
+                action: [29],
+                cost: 25
             }
         ]
     },
@@ -443,18 +453,27 @@ export default [
         options: [
             {
                 text: "Buy Food?",
-                nextText: 9,
-                action: [11, 25]
+                nextText: 8.2,
+                action: [11, 25],
+                cost: 10
             },
             {
                 text: "Buy Fuel?",
-                nextText: 9,
-                action: [13, 26]
+                nextText: 8.2,
+                action: [13, 26],
+                cost: 10
             },
             {
                 text: "Buy medicine?",
+                nextText: 8.2,
+                action: [6, 28],
+                hideIfAlreadyHas: 5,
+                cost: 20
+            },
+            {
+                text: "Continue",
                 nextText: 9,
-                action: [6, 28]
+                action: [12, 8],
             }
         ]
     },
@@ -470,7 +489,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 9,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -486,7 +505,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 9,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -525,7 +544,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 10,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -541,7 +560,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 10,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -579,7 +598,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 11,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -596,7 +615,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 11,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -634,7 +653,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 12,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -651,7 +670,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 12,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -695,7 +714,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 13,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -712,7 +731,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 13,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -729,7 +748,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 13,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -766,7 +785,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 14,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -783,7 +802,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 14,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -820,7 +839,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 15,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -857,7 +876,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 16,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -874,7 +893,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 16,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -912,7 +931,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 17,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -929,7 +948,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 17,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -967,7 +986,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 18,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -984,7 +1003,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 18,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -1028,7 +1047,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 19,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -1043,7 +1062,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 19,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -1060,7 +1079,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 19,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -1103,7 +1122,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 20,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -1118,7 +1137,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 20,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -1135,7 +1154,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 20,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -1173,12 +1192,12 @@ export default [
         options: [
             {
                 text: "Purchase Food?",
-                nextText: 21,
+                nextText: 20.2,
                 action: [9, 25]
             },
             {
                 text: "Purchase Fuel?",
-                nextText: 21,
+                nextText: 20.2,
                 // action: +10 fuel - 20 money
                 action: [13, 28]
             }
@@ -1196,7 +1215,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 21,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -1235,7 +1254,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 22,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -1251,7 +1270,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 22,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -1290,7 +1309,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 23,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -1306,7 +1325,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 23,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -1345,7 +1364,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 23,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -1361,7 +1380,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 24,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -1399,7 +1418,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 25,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -1415,7 +1434,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 25,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -1454,7 +1473,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 26,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
@@ -1470,7 +1489,7 @@ export default [
             {
                 text: "Continue",
                 nextText: 26,
-                action: [12]
+                action: [12, 8]
             }
         ]
     },
