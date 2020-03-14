@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react';
-import Typist from 'react-typist'
-import StoryContext from '../../utils/StoryContext'
-import PlayerContext from '../../utils/PlayerContext';
+import React, { useContext, useState } from "react";
+import Typist from "react-typist";
+import StoryContext from "../../utils/StoryContext";
+import PlayerContext from "../../utils/PlayerContext";
 
 function GameCol(props) {
     const { image, title, text, options, progress } = useContext(StoryContext);
-    const { inventory } = useContext(PlayerContext);
+    const { inventory, money } = useContext(PlayerContext);
     console.log(props);
     const [showTyping, setShowTyping] = useState(0);
 
@@ -32,18 +32,35 @@ function GameCol(props) {
             </div>
             <div className="text-window">
                 <p className="event-text" style={{ color: "gold" }}>{title}</p>
-                <Typist avgTypingDelay={1} key={showTyping}>
-                    <p className="event-text" style={{ fontFamily: 'Arcade', textTransform: 'initial' }}>{text}</p>
-                    {options.map(opt => {
-                        if (!opt.showIfInventoryHas) {
-                            return <button className="option-button" key={opt.text} onClick={() => { props.actionMethod(opt.action, opt.nextText); setShowTyping(showTyping + 1); }}>{opt.text}</button>
+                {/* <Typist avgTypingDelay={1} key={showTyping}> */}
+                <p className="event-text" style={{ fontFamily: 'Arcade', textTransform: 'initial' }}>{text}</p>
+                {options.map(opt => {
+                    if (!opt.showIfInventoryHas) {
+                        if (!opt.cost) {
+                            if (!opt.hideIfAlreadyHas) {
+                                return <button className="option-button" key={opt.text} onClick={() => { props.actionMethod(opt.action, opt.nextText); setShowTyping(showTyping + 1); }}>{opt.text}</button>
+                            }
                         }
-                        else if (inventory.map((x) => x.item_id).indexOf(opt.showIfInventoryHas) > -1) {
+                        else if (inventory.map((x) => x.item_id).indexOf(opt.hideIfAlreadyHas) >= 0) {
+                            return;
+                        } else if (money >= opt.cost) {
                             return <button className="option-button" key={opt.text} onClick={() => { props.actionMethod(opt.action, opt.nextText); setShowTyping(showTyping + 1); }}>{opt.text}</button>
                         }
                     }
-                    )}
-                </Typist>
+                    // else if (inventory.map((x) => x.item_id).indexOf(opt.hideIfAlreadyHas) >= 1) {
+                    //     return;
+                    // }
+                    else if (inventory.map((x) => x.item_id).indexOf(opt.showIfInventoryHas) > -1) {
+                        if (!opt.cost) {
+                            return <button className="option-button" key={opt.text} onClick={() => { props.actionMethod(opt.action, opt.nextText); setShowTyping(showTyping + 1); }}>{opt.text}</button>
+                        } else if (money >= opt.cost) {
+                            return <button className="option-button" key={opt.text} onClick={() => { props.actionMethod(opt.action, opt.nextText); setShowTyping(showTyping + 1); }}>{opt.text}</button>
+                        }
+                    }
+                }
+
+                )}
+                {/* </Typist> */}
             </div>
         </div >
     );
