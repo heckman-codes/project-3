@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import PlayerContext from '../../utils/PlayerContext'
+import StoryContext from '../../utils/StoryContext';
 
 function InventoryCol(props) {
-
+    const { id } = useContext(StoryContext)
     const { inventory } = useContext(PlayerContext);
 
     var toolytip = document.getElementsByClassName('.toolytip');
@@ -24,7 +25,7 @@ function InventoryCol(props) {
             <ul>
                 {inventory.map(el =>
                     <li className="col s10 offset-s1 container toolytip" key={el.item_id}>
-                        <img alt="inventory-item" className="inventory-item" src={el.image} />
+                        <img alt="inventory-item" className="inventory-item" src={el.image} onClick={() => props.actionMethod(el.action, id)} />
                         <span className="toolytipdata">
                             <h4>{el.name}</h4>
                             <p className="toolytip-body-text">{el.desc}</p>
