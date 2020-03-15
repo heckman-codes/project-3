@@ -9,9 +9,9 @@ import GameStory from "../../data/GameStory";
 import useableItems from "../../data/useableItems";
 import playableCharacters from "../../data/Characters";
 
-// for (let i = 0; i < GameStory.length; i++) {
-//     console.log(i + " - " + GameStory[i].id)
-// }
+for (let i = 0; i < GameStory.length; i++) {
+    console.log(i + " - " + GameStory[i].id)
+}
 
 function Game() {
     // The code below is intended to load the player's state from MongoDB and then set that as the view state.
@@ -225,7 +225,7 @@ function Game() {
                 fuel: fuel,
                 state: stateNum
             });
-            setStoryState(GameStory[79]);
+            setStoryState(GameStory[80]);
             return;
         } else if (fuel <= 0) {
             console.log(player);
@@ -238,7 +238,7 @@ function Game() {
                 fuel: fuel,
                 state: stateNum
             });
-            setStoryState(GameStory[80]);
+            setStoryState(GameStory[81]);
             return;
         } else if (food <= 0) {
             setPlayerState({
@@ -250,7 +250,7 @@ function Game() {
                 fuel: fuel,
                 state: stateNum
             });
-            setStoryState(GameStory[81]);
+            setStoryState(GameStory[82]);
             return;
         } else {
             let storyStatus = fetchState(nextText);
