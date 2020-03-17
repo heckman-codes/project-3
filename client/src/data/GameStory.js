@@ -244,7 +244,7 @@ export default [
     id: 5.1,
     title: "Quiet Town",
     text:
-      "You mange to find a few necessities, but the place has been picked clean.",
+      "You manage to find a few necessities, but the place has been picked clean.",
     image:
       "https://project-3-arcade-game.s3-us-west-2.amazonaws.com/frame_5.gif",
     progress: 16,
