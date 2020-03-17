@@ -25,12 +25,8 @@ const Login = (props) => {
     function handleFormSubmit(event) {
         event.preventDefault();
         if (formObject.username && formObject.password) {
-            API.getLogin({
-
-                username: formObject.username,
-                password: formObject.password
-            })
-                // insert play game history thing here...
+            API.saveLogin(
+                formObject)
                 .then(res => history.push("/game"))
                 .catch(err => console.log(err));
         }

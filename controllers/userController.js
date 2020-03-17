@@ -8,22 +8,25 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
-    // findById: function (req, res) {
-    //     console.log(req.body)
-    //     db.User
-    //         .findOne({
-    //             where: { username: req.body.username }
-    //         })
 
-    //         // findOne(conditions ?: FilterQuery < T >,
-    //         //     callback ?: (err: any, res: T | null) => void): DocumentQuery<T | null, T, QueryHelpers> & QueryHelpers;
+    findByUsername: function (req, res) {
+        console.log(req.body)
+        db.User
+            .findOne({
+                where: { username: req.body.username }
+            })
 
-    //         .then(dbModel => {
-    //             res.json(dbModel)
-    //             console.log(dbModel)
-    //         })
-    //         .catch(err => res.status(422).json(err))
-    // },
+            // findOne(conditions ?: FilterQuery < T >,
+            //     callback ?: (err: any, res: T | null) => void): DocumentQuery<T | null, T, QueryHelpers> & QueryHelpers;
+            //password matching
+            // .then()
+            .then(dbModel => {
+                res.json(dbModel)
+                console.log(dbModel)
+            })
+
+            .catch(err => res.status(422).json(err))
+    },
 
     // signup to create new user to database
     create: function (req, res) {
