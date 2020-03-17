@@ -5,4 +5,4 @@ router
     .route('/signup')
     .post(userController.create)
 
-module.exports = router
+module.exports = router 

@@ -3,9 +3,17 @@ import axios from "axios";
 export default {
 
     // Gets the Users with the given id
-    getLogin: function (id) {
-        console.log(id);
-        return axios.get("/api/login/" + id);
+    getLogin: function (userLoginData) {
+        console.log(userLoginData);
+        return axios.get("/api/login/", userLoginData);
+    },
+    // Deletes the User with the given id
+    deleteLogin: function (id) {
+        return axios.delete("/api/login/" + id);
+    },
+    // Saves a User to the database
+    saveLogin: function (loginData) {
+        return axios.get("/api/login", loginData);
     },
     // Saves a User to the database
     addUser: function (signupData) {
@@ -13,6 +21,7 @@ export default {
     },
     saveLogin: function (loginData) {
         console.log(loginData);
-        return axios.get("/api/login", loginData)
+        const url = encodeURIComponent(JSON.stringify(loginData))
+        return axios.get("/api/login/" + url)
     }
 };

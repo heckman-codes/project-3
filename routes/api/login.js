@@ -2,11 +2,11 @@ const router = require('express').Router();
 const userController = require('../../controllers/userController');
 
 router
-    .route('/login')
-    .get(userController.findByUsername)
+    .route('/login/:user')
+    .get(userController.findByUsername);
 
-router
-    .route('/login/:id')
-    .get(userController.findById)
+// router
+//     .route('/login/:id')
+//     .get(userController.findById);
 
-module.exports = router 
+module.exports = router;
