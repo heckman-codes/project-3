@@ -4,6 +4,7 @@ import API from "../../utils/API"
 import HomeContainer from "../HomeContainer";
 import HomeCol from "../HomeCol";
 import HomeRow from "../HomeRow";
+import LoginBtn from "../LoginBtn";
 import "../../pages/Home/style.css";
 
 const Login = (props) => {
@@ -25,8 +26,8 @@ const Login = (props) => {
     function handleFormSubmit(event) {
         event.preventDefault();
         if (formObject.username && formObject.password) {
+            console.log(event);
             API.getLogin({
-
                 username: formObject.username,
                 password: formObject.password
             })
@@ -71,13 +72,14 @@ const Login = (props) => {
                         </HomeCol>
                     </HomeRow>
 
-                    <button onClick={handleFormSubmit} className="btn btn-success" type="submit">
+                    <LoginBtn onClick={handleFormSubmit}></LoginBtn>
+                    {/* <button onClick={handleFormSubmit} className="btn btn-success login-btn" type="submit">
                         Login
-                    </button>
+                    </button> */}
                 </HomeContainer>
 
             </form>
-        </div>
+        </div >
     );
 };
 
