@@ -54,7 +54,9 @@ const Login = (props) => {
             <form onSubmit={props.onSubmit}>
                 <HomeContainer className="mt-3 px-5" id="login-container">
                     <HomeRow>
-                        <h3>Please Enter your Username and Password.</h3>
+                        <div className="modal-header">
+                            <h5 className="modal-title">Please Login To Your Account!</h5>
+                        </div>
                     </HomeRow>
                     <HomeRow className="form-group">
                         <HomeCol size="12">

@@ -21,9 +21,14 @@
     color: #333333;
 }
 
+.form-group {
+    padding: 0 20px 0 20px;
+}
+
 footer {
     position: fixed;
 }
+
 
 #footer {
     font-family: "Arcade";
