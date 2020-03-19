@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useHistory, useParams } from "react-router-dom";
+import API from "../../utils/API"
 import playableCharacters from '../../data/Characters'
+import "../../pages/Home/style.css";
 
 function CharSelection(props) {
     let playerObject;
@@ -24,6 +27,12 @@ function CharSelection(props) {
             //save to MongoDB and then switch to game page
         }
     }
+
+    // function handleCharcterSelection(event) {
+    //     event.preventDefault();
+    //     const { charcter, value } = event.target;
+    //     set
+    // }
 
     return (
         <div className="container">

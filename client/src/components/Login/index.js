@@ -36,7 +36,7 @@ const Login = (props) => {
                 .then(res => {
                     console.log(res)
                     if (!res.data.err) {
-                        { history.push("/game") }
+                        { history.push("/characters") }
                     } else {
                         alert("password failed. try again")
                     }
@@ -84,9 +84,6 @@ const Login = (props) => {
                     </HomeRow>
 
                     <LoginBtn onClick={handleFormSubmit}></LoginBtn>
-                    {/* <button onClick={handleFormSubmit} className="btn btn-success login-btn" type="submit">
-                        Login
-                    </button> */}
                 </HomeContainer>
 
             </form>
