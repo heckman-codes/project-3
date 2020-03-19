@@ -837,8 +837,27 @@ export default [
         progress: 52,
         options: [
             {
+                text: "Buy Food?",
+                nextText: 8.2,
+                action: [11, 25],
+                cost: 10
+            },
+            {
+                text: "Buy Fuel?",
+                nextText: 8.2,
+                action: [13, 26],
+                cost: 10
+            },
+            {
+                text: "Buy medicine?",
+                nextText: 8.2,
+                action: [6, 28],
+                hideIfAlreadyHas: 5,
+                cost: 20
+            },
+            {
                 text: "Continue",
-                nextText: 15,
+                nextText: 9,
                 action: [12, 8]
             }
         ]
