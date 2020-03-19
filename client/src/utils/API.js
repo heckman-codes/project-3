@@ -3,6 +3,7 @@ import axios from "axios";
 export default {
   // Gets the Users with the given id
   getLogin: function(userLoginData) {
+    gi;
     console.log(userLoginData);
     return axios.get("/api/login/", userLoginData);
   },
