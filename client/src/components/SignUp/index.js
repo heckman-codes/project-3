@@ -4,6 +4,7 @@ import API from "../../utils/API"
 import HomeContainer from "../HomeContainer";
 import HomeCol from "../HomeCol";
 import HomeRow from "../HomeRow";
+import SignUpBtn from "../SignUpBtn";
 import "../../pages/Home/style.css";
 
 const Signup = (props) => {
@@ -42,50 +43,44 @@ const Signup = (props) => {
             <form onSubmit={props.onSubmit}>
                 <HomeContainer className="mt-3 px-5" id="sign-up-container">
                     <HomeRow>
-                        <h3>Please Sign Up Below.</h3>
+                        <div className="modal-header">
+                            <h5 className="modal-title">Please Sign-Up To Create An Account!</h5>
+                        </div>
                     </HomeRow>
                     <HomeRow className="form-group">
-                        <HomeCol size="12">
-                            <input
-                                className="form-control"
-                                type="text"
-                                placeholder="Username"
-                                name="username"
-                                value={formObject.username}
-                                onChange={handleInputChange}
-                            />
-                        </HomeCol>
+                        <input
+                            className="form-control"
+                            type="text"
+                            placeholder="Username"
+                            name="username"
+                            value={formObject.username}
+                            onChange={handleInputChange}
+                        />
                     </HomeRow>
                     <HomeRow className="form-group">
-                        <HomeCol size="12">
-                            <input
-                                className="form-control"
-                                type="password"
-                                placeholder="Password"
-                                name="password"
-                                value={formObject.password}
-                                onChange={handleInputChange}
-                            />
-                        </HomeCol>
+                        <input
+                            className="form-control"
+                            type="password"
+                            placeholder="Password"
+                            name="password"
+                            value={formObject.password}
+                            onChange={handleInputChange}
+                        />
                     </HomeRow>
 
                     <HomeRow className="form-group">
-                        <HomeCol size="12">
-                            <input
-                                className="form-control"
-                                type="password"
-                                placeholder="Confirm Password"
-                                name="confirmPassword"
-                                value={formObject.confirmPassword}
-                                onChange={handleInputChange}
-
-                            />
-                        </HomeCol>
+                        <input
+                            className="form-control"
+                            type="password"
+                            placeholder="Confirm Password"
+                            name="confirmPassword"
+                            value={formObject.confirmPassword}
+                            onChange={handleInputChange}
+                        />
                     </HomeRow>
 
-                    <button onClick={handleFormSubmit} className="btn btn-success" type="submit" id="signUpBtn">
-                        Sign Up
-                    </button>
+                    <SignUpBtn onClick={handleFormSubmit}></SignUpBtn>
+
                 </HomeContainer>
             </form>
         </div>

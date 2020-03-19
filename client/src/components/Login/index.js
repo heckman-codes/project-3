@@ -36,7 +36,7 @@ const Login = (props) => {
                 .then(res => {
                     console.log(res)
                     if (!res.data.err) {
-                        { history.push("/game") }
+                        { history.push("/characters") }
                     } else {
                         alert("password failed. try again")
                     }
@@ -54,7 +54,9 @@ const Login = (props) => {
             <form onSubmit={props.onSubmit}>
                 <HomeContainer className="mt-3 px-5" id="login-container">
                     <HomeRow>
-                        <h3>Please Enter your Username and Password.</h3>
+                        <div className="modal-header">
+                            <h5 className="modal-title">Please Login To Your Account!</h5>
+                        </div>
                     </HomeRow>
                     <HomeRow className="form-group">
                         <HomeCol size="12">
@@ -82,9 +84,6 @@ const Login = (props) => {
                     </HomeRow>
 
                     <LoginBtn onClick={handleFormSubmit}></LoginBtn>
-                    {/* <button onClick={handleFormSubmit} className="btn btn-success login-btn" type="submit">
-                        Login
-                    </button> */}
                 </HomeContainer>
 
             </form>

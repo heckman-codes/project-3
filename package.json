@@ -1,5 +1,5 @@
 {
-  "name": "project-3",
+  "name": "the-long-way",
   "version": "1.0.0",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "server.js",
@@ -32,7 +32,7 @@
     "type": "git",
     "url": "git+https://github.com/heckman-codes/project-3.git"
   },
-  "author": "",
+  "author": "kevin, adam, caitlan, liam, loren",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/heckman-codes/project-3/issues"
