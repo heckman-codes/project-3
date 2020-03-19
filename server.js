@@ -7,14 +7,17 @@ const routes = require("./routes");
 var db = require("./models");
 const app = express();
 const PORT = process.env.PORT || 3002;
-
+const bodyParser = require("body-parser")
 
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.json({
+  strict: false
+}));
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -36,6 +39,8 @@ if (process.env.NODE_ENV === "production") {
 //   next();
 // });
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/thelongway");
+const dB = mongoose.connection;
+dB.once("open", () => console.log("hello world!"))
 app.use(routes);
 // Connect to the Mongo DB
 app.get("*", (reg, res) => {
