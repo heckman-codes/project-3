@@ -13,7 +13,7 @@ export default {
     },
     // Saves a User to the database
     saveLogin: function (loginData) {
-        return axios.get("/api/login", loginData);
+        return axios.post("/api/login", loginData);
     },
     // Saves a User to the database
     addUser: function (signupData) {
